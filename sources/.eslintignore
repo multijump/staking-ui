@@ -1,0 +1,4 @@
+/gulp/tasks/*.js
+/gulp/*.js
+/src/js/*
+gulpfile.js

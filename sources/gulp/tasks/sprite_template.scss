@@ -1,0 +1,53 @@
+{{#hasMixin}}@mixin {{mixinName}} {
+	background: url("{{{sprite}}}") no-repeat;
+}
+
+{{#hasCommon}}.{{commonName}} {
+	@include {{mixinName}};
+}
+
+{{/hasCommon}}{{/hasMixin}}{{^hasMixin}}{{#hasCommon}}.{{/hasCommon}}{{^hasCommon}}%{{/hasCommon}}{{commonName}} {
+	background: url("{{{sprite}}}") no-repeat;
+}
+
+{{/hasMixin}}{{#shapes}}{{#selector.shape}}{{expression}}{{^last}},
+{{/last}}{{/selector.shape}} {
+	{{^hasCommon}}{{#hasMixin}}@include {{mixinName}};{{/hasMixin}}{{^hasMixin}}@extend %{{commonName}};{{/hasMixin}}
+	{{/hasCommon}}background-position: {{position.relative.xy}};
+	background-size: ({{spriteWidth}}/{{width.outer}})*100% auto;
+	width: {{width.outer}}px;
+	{{#dimensions.inline}}
+	width: {{width.outer}}px;
+	height: {{height.outer}}px;{{/dimensions.inline}}
+}
+@mixin svg-pos-{{name}} {
+	background-position: {{position.relative.xy}};
+}
+@mixin svg-{{name}}-hover {
+	.svg-{{name}} {
+		@include svg-pos-{{name}}-hover
+	}
+}
+
+{{#selector.shape}}{{expression}}:before{{^last}},
+{{/last}}{{/selector.shape}} {
+	content:"";
+	display:block;
+	font-size:0;
+	line-height:0;
+	padding-top: ({{height.outer}}/{{width.outer}})*100%;
+}
+{{#dimensions.extra}}
+
+{{#selector.dimensions}}{{expression}}{{^last}},
+{{/last}}{{/selector.dimensions}} {
+	width: {{width.outer}}px;
+	height: {{height.outer}}px;
+}{{/dimensions.extra}}
+
+{{/shapes}}
+
+.image-by-height { width:auto; }
+.image-by-height:before { content:none; }
+.image-by-height > svg { height: inherit; }
+.image-by-height > img { height: inherit !important; vertical-align: top !important; margin: 0 !important; padding: 0 !important; max-width: none !important; max-height: none !important; border: 0 !important; opacity: 0 !important; }

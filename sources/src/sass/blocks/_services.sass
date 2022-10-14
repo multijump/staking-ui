@@ -1,0 +1,95 @@
+
+body
+    opacity: 0
+    transition: all .1s
+    &.dark-mode
+        opacity: unset
+    &.light-mode
+        opacity: unset
+
+.services
+    &-mounted
+        position: absolute
+        left: 0
+        right: 0
+        top: 0
+        bottom: 0
+        background: #ff6616
+        color: white
+        display: flex
+        align-items: center
+        justify-content: center
+
+#toasts
+    position: absolute
+    right: 0
+    top: calc(100% + 5px)
+    display: flex
+    flex-direction: column
+    align-items: flex-end
+    overflow: hidden
+    padding: 10px 25px
+    .btn
+        width: 240px
+        justify-content: flex-start
+        padding: 10px 20px
+        text-align: left
+        height: unset
+        line-height: 1.3
+        display: initial
+        transform: translateX(200%)
+        word-break: break-word
+
+        b
+            color: #ff6616
+
+        &.ease-in
+            transition-timing-function: ease-in
+            transition: 0.5s
+            transform: translateX(0)
+
+        &.ease-out
+            transition-timing-function: ease-out
+            transition: 0.5s
+            transform: translateX(200%)
+
+        span
+            font-size: 80%
+    
+    .count
+        min-width: 30px
+        width: auto
+        height: 30px
+        border-radius: 15px
+        padding: 5px 10px
+        display: flex
+        align-items: center
+        justify-content: center
+        cursor: pointer
+        margin-bottom: 10px
+
+        .label
+            display: none
+
+        &:hover
+            .label
+                display: block
+
+.transactions
+    .common-bases__title
+        display: flex
+        justify-content: space-between
+        align-items: center
+        span
+            color: #ff5934
+            cursor: pointer
+    &__items
+        max-height: 350px
+        overflow: auto
+        a
+            color: #ff5934
+            display: flex
+            justify-content: space-between
+            margin: 10px
+            img
+                height: 15px

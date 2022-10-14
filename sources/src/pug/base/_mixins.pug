@@ -1,0 +1,53 @@
+mixin icon(name,width)
+    if !width
+        span(class="icon svg-image-" + name)
+    else
+        span(class="icon svg-image-" + name style="width:" + width + "px")
+
+
+mixin picture(name,ext,x2)
+    if !x2
+        picture.picture
+            source(srcset="images/" + name + ".webp" type="image/webp")
+            source(srcset="images/" + name + "." + ext  type="image/" + ext)
+            img.picture__img(src="images/" + name + "." + ext alt="")
+    else
+        picture.picture
+            source(srcset="images/" + name + ".webp, images/" + name + "@2x.webp 2x" type="image/webp")
+            source(srcset="images/" + name + "." + ext + ", images/" + name + "@2x." + ext + " 2x"  type="image/" + ext)
+            img.picture__img(src="images/" + name + "." + ext srcset="images/" + name + "." + ext + ", images/" + name + "@2x." + ext + " 2x" alt="")
+
+
+mixin breadcrumbs(arr,cur)
+    .b-breadcrumbs
+        .container
+            each v in arr
+                a(href="#").b-breadcrumbs__link=v
+            if cur!=''
+                span.b-breadcrumbs__text=cur
+
+
+
+mixin pagination(amount, current, ellipsis, last, arrows)
+    .pagination
+        if (arrows === true)
+            a(href="#").pagination__prev: span
+
+        ul.pagination__list
+            - for (var index = 1; index <= amount; index++)
+                    if (index === current)
+                        li.pagination__item.current
+                            span= index
+                    else if (index === ellipsis)
+                        li.pagination__item
+                            a(href="#").is-collapsed ...
+                    else
+                        li.pagination__item
+                            a(href="#")= index
+
+            - for (var index = last; index <= last; index++)
+                    li.pagination__item
+                        a(href="#")= index
+
+        if (arrows === true)
+            a(href="#").pagination__next: span

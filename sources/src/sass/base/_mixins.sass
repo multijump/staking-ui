@@ -1,0 +1,71 @@
+@mixin font-face($font-name,$font-file)
+    @font-face
+        font-family: '#{$font-name}'
+        font-display: swap
+        src: url('../fonts/#{$font-file}.woff') format('woff'),
+        url('../fonts/#{$font-file}.woff2') format('woff2')
+
+
+
+// Fluid fonts
+// See https://habr.com/post/310186/
+// Also check _layout.sass, fix for Safari is required
+
+@function strip-unit($number)
+    @if type-of($number) == 'number' and not unitless($number)
+        @return $number / ($number * 0 + 1)
+    @return $number
+@function calcFluidFontSize($f-min, $f-max, $w-min, $w-max, $units: px)
+    $f-min: strip-unit($f-min)
+    $f-max: strip-unit($f-max)
+    $w-min: strip-unit($w-min)
+    $w-max: strip-unit($w-max)
+
+    $k: ($f-max - $f-min)/($w-max - $w-min)
+    $b: $f-min - $k * $w-min
+
+    $b: $b + $units
+
+    @return calc( #{$k} * 100vw + #{$b} )
+
+@mixin fluidFontSize($f-min, $f-max, $w-min, $w-max, $fallback: false)
+    font-size: $f-min
+    @media (min-width: $w-min)
+        @if ($fallback)
+            font-size: $fallback
+        font-size: calcFluidFontSize($f-min, $f-max, $w-min, $w-max, px)
+    @media (min-width: $w-max)
+        font-size: $f-max
+
+// media query settings
+@mixin breakpoint-phone
+    @media (min-width: $phone)
+        @content
+
+@mixin breakpoint-tablet-sm
+    @media (min-width: $tablet-sm)
+        @content
+
+@mixin breakpoint-tablet
+    @media (min-width: $tablet)
+        @content
+
+@mixin breakpoint-tablet-lg
+    @media (min-width: $tablet-lg)
+        @content
+
+@mixin breakpoint-notebook-max
+    @media (max-width: $notebook)
+        @content
+
+@mixin breakpoint-tablet-lg-max
+    @media (max-width: $tablet-lg)
+        @content
+
+@mixin breakpoint-tablet-max
+    @media (max-width: $tablet)
+        @content
+    
+@mixin breakpoint-tablet-sm-max
+    @media (max-width: $tablet-sm)
+        @content

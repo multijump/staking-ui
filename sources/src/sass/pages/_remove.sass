@@ -1,0 +1,151 @@
+.remove
+    padding: 30px 0
+    .container
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
+    &-form
+        position: relative
+        display: block
+        width: 100%
+        max-width: 490px
+        background-color: #fff
+        box-shadow: 0px 0px 20px rgba(0,0,0, .05)
+        border: 1px solid #F2F2F2
+        border-radius: 13px
+        padding: 50px 60px
+        transition: all .2s ease
+        &.active
+            filter: unset
+        @media (max-width: 499px)
+            padding: 40px 20px
+        &__back
+            display: block
+            position: absolute
+            top: 26px
+            left: 36px
+            svg
+                path
+                    stroke: #333
+                    transition: all .2s ease
+        &__title
+            display: flex
+            justify-content: center
+            margin-bottom: 30px
+            h6
+                font-family: $muksb
+                font-size: 20px
+        &__notice
+            background-color: #fbfbfb
+            border-radius: 10px
+            color: $orange
+            padding: 20px 30px
+            margin-bottom: 40px
+            transition: all .2s ease
+            h6
+                font-family: $muksb
+                font-size: 17px
+                margin-bottom: 10px
+            p
+                line-height: 1.375
+                margin-bottom: 15px
+                &:last-child
+                    margin-bottom: 0
+        &__amount
+            &-title
+                font-family: $muksb
+                font-size: 17px
+                margin-bottom: 10px
+            &-percent
+                font-family: $muksb
+                font-size: 48px
+                margin-bottom: 10px
+            &-range
+                width: 100%
+                height: 5px
+                background: #d3d3d3
+                outline: none
+                opacity: 0.7
+                -webkit-appearance: none
+                -webkit-transition: .2s
+                transition: opacity .2s
+
+                &:hover 
+                    opacity: 1
+
+                &::-webkit-slider-thumb
+                    -webkit-appearance: none
+                    appearance: none
+                    width: 25px
+                    height: 25px
+                    background:#FF6616
+                    cursor: pointer
+                    border-radius: 50%
+
+                &::-moz-range-thumb
+                    width: 25px
+                    height: 25px
+                    background: #4CAF50
+                    cursor: pointer
+                    border-radius: 50%
+
+        &__buttons
+            display: flex
+            margin-top: 20px
+            &-item
+                flex: 1
+                display: flex
+                align-items: center
+                justify-content: center
+                border-radius: 8px
+                height: 32px
+                margin-right: 20px
+                cursor: pointer
+                border: 1px solid rgb(237, 238, 242)
+                background-color: #F7F8FA
+                transition: all 0.3s ease
+                &:last-child
+                    margin: 0
+                &:hover
+                    color: #FFFFFF
+                    background-color: #FF8F07
+                &.active
+                    color: #FFFFFF
+                    background-color: #FF6616
+                    transition: all 0.3s ease
+                    &:hover
+                        background-color: #FF8F07
+        &__info
+            margin-top: 20px
+            &-token
+                display: flex
+                justify-content: space-between
+                align-items: center
+                padding: 5px 0
+                &-value
+                    font-family: $muksb
+                    font-size: 17px
+
+                &-label
+                    display: flex
+                    align-items: center
+                    img
+                    span
+                        margin-left: 10px
+        &__price
+            margin-top: 20px
+            display: flex
+            justify-content: space-between
+            align-items: flex-start
+            &-values
+                display: flex
+                flex-direction: column
+                align-items: flex-end
+        &__action
+            display: flex
+            width: 100%
+            margin-top: 20px
+            &-btn
+                flex: 1
+

@@ -1,0 +1,141 @@
+.footer
+    position: relative
+    background-color: #fff
+    border-top: 1px solid #f2f2f2
+    padding: 105px 0
+    transition: all .2s ease
+    @media (max-width: 767px)
+        padding: 60px 0 45px
+    .container
+        display: flex
+        justify-content: space-between
+        align-items: flex-start
+        @media (max-width: 1023px)
+            display: block
+    &__cols
+        display: flex
+        justify-content: space-between
+        align-items: flex-start
+        width: 100%
+        max-width: 590px
+        @media (max-width: 1149px)
+            max-width: 500px
+        @media (max-width: 1023px)
+            max-width: 700px
+            margin: 0 auto 60px
+        @media (max-width: 499px)
+            display: block
+            max-width: 100%
+    &__col
+        @media (max-width: 499px)
+            margin-bottom: 20px
+            &:last-child
+                margin-bottom: 0
+        &-head
+            position: relative
+            padding-bottom: 8px
+            p
+                font-family: $mukb
+                font-size: 14px
+                line-height: 1.5
+                color: #454545
+                letter-spacing: 2px
+                text-transform: uppercase
+                transition: color .2s ease
+            &::after
+                content: ''
+                display: block
+                width: 83px
+                height: 3px
+                background: url('../images/dashed.svg') center center no-repeat
+                position: absolute
+                left: 0
+                bottom: 0
+            @media (max-width: 499px)
+                padding: 8px 0
+                cursor: pointer
+                p
+                    font-size: 20px
+                &::after
+                    width: 10px
+                    height: 10px
+                    background: none
+                    border-right: 2px solid #454545
+                    border-bottom: 2px solid #454545
+                    position: absolute
+                    top: 50%
+                    left: auto
+                    right: 10px
+                    transform: translateY(-75%) rotate(45deg)
+        &-body
+            padding: 22px 0
+            @media (min-width: 500px)
+                display: block !important
+            a
+                display: block
+                line-height: 1.25
+                color: #696969
+                margin-bottom: 22px
+                &:last-child
+                    margin-bottom: 0
+            @media (max-width: 499px)
+                display: none
+                a
+                    line-height: 1.65
+                    margin-bottom: 15px
+    &__form
+        width: 100%
+        max-width: 420px
+        @media (max-width: 1149px)
+            max-width: 400px
+        @media (max-width: 1023px)
+            max-width: 500px
+            margin: 0 auto
+        h6
+            font-family: $muk
+            color: #404040
+            margin-bottom: 25px
+            transition: color .2s ease
+    .f-subscribe-form
+        display: flex
+        align-items: center
+        width: 100%
+        margin-bottom: 65px
+        input
+            flex-grow: 1
+            height: 48px
+            background-color: #fff
+            box-shadow: 0px 8px 6px rgba(0,0,0, .01)
+            border: 1px solid #F4F4F4
+            border-radius: 10px
+            padding: 0 28px
+            margin-right: 20px
+        .btn
+            width: 120px
+            height: 44px
+            flex-shrink: 0
+        @media (max-width: 499px)
+            display: block
+            margin-bottom: 45px
+            input
+                width: 100%
+                margin: 0 0 20px
+            .btn
+                width: 100%
+    &__copyright
+        border-top: 1px solid #f9f9f9
+        color: #cdcdcd
+        text-align: right
+        padding-top: 45px
+        transition: all .2s ease
+        @media (max-width: 1023px)
+            text-align: center
+
+    &--inner
+        padding: 50px 0
+        .container
+            display: block
+        .footer__copyright
+            border: none
+            text-align: center
+            padding: 0

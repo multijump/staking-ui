@@ -1,0 +1,196 @@
+.popup-overlay#select_token(data-scroll-lock-scrollable)
+    .popup.popup--select-token
+        .popup__close.js-popup-close
+        .popup__title
+            h6 Select a Token
+        .search-input
+            input(type="text" placeholder="Search name or paste address")
+        .swap-form-import__notice.warning
+        .common-bases
+            .common-bases__title Common bases
+            .common-bases__items
+                a.base-token(href="#" data-key="0x0000000000000000000000000000000000000000").cb-item.js-select-token
+                    img(src="images/eth.svg", alt="")
+                    span.ticker ETH
+        .token-list(data-scroll-lock-scrollable)
+            a.base-token(href="#" data-key="0x0000000000000000000000000000000000000000").token-list__item.js-select-token
+                img(src="images/eth.svg", alt="")
+                .token-list__item-name
+                    .ticker ETH
+                    .descr Ether
+
+
+.popup-overlay#connect_wallet
+    .popup
+        .popup__close.js-popup-close
+        .popup__title
+            h6 Connect to a wallet
+        .wallet-list(data-scroll-lock-scrollable)
+            //- a(href="#login_using").wallet-list__item.js-popup-open
+            //-     img(src="images/binance-chain_logo.svg", alt="")
+            //-     span Binance Chain Wallet
+            a(href="#metamask").wallet-list__item.js-popup-open
+                img(src="images/metamask.svg", alt="")
+                span MetaMask
+            //- a(href="#login_using").wallet-list__item.js-popup-open
+            //-     img(src="images/coinbase-wallet.svg", alt="")
+            //-     span Coinbase Wallet
+            //- a(href="#login_using").wallet-list__item.js-popup-open
+            //-     img(src="images/fortmatic.svg", alt="")
+            //-     span Fortmatic
+            //- a(href="#login_using").wallet-list__item.js-popup-open
+            //-     img(src="images/portis.svg", alt="")
+            //-     span Portis
+            a(href="#walletconnet").wallet-list__item.js-popup-open
+                img(src="images/walletconnect.svg", alt="")
+                span WalletConnect
+        .popup__about-wallets New to Ethereum?
+            a(href="#") Learn more about wallets
+
+
+
+
+.popup-overlay#login_using
+    .popup
+        .popup__close.js-popup-close
+        .popup__title.popup__title--using
+            h6 Login using #[span#wallet_name MetaMask]
+            img#wallet_logo(src="images/metamask.svg", alt="")
+        a(href="#").popup__back
+            svg(width='17' height='18' fill='none' version='1.1' viewBox='0 0 17 18' xmlns='http://www.w3.org/2000/svg')
+                path(d='m17 8.8125h-15m-0.34375-0.53125 6.25 7.8125m-6.3125-6.6562 6.2812-8.125' stroke='#333' stroke-width='2')
+        .popup__initializing
+            .initializing
+                img(src="images/ellipse.svg", alt="")
+                span Initializing...
+
+.popup-overlay#confirm_swap
+    .popup.popup--select-token
+        .popup__close.js-popup-close
+        .popup__title
+            h6 Confirm Swap
+        .popup__body
+            .popup__body-token
+                .popup__body-token-left.base-token
+                    img.popup_from_img(src="images/eth.svg", alt="")
+                    span.popup_from_amount
+                .popup__body-token-right.popup_from_symbol
+            .swap-form__input-divider
+                .input-divider.js-input-swap
+                    svg(width='13' height='15' fill='none' version='1.1' viewBox='0 0 13 15' xmlns='http://www.w3.org/2000/svg')
+                        path(d='m6.8333 0v14m-0.27528 0.089886 5.8334-4.6667m-5.2098 4.6723-5.8333-4.6667')
+            .popup__body-token
+                .popup__body-token-left.base-token
+                    img.popup_to_img(src="images/eth.svg", alt="")
+                    span.popup_to_amount
+                .popup__body-token-right.popup_to_symbol
+            .popup__body-desc Output is estimated. You will receive at least 45.0102 SXP or the transaction will revert.
+            .popup__body-details
+                .popup__body-details-item
+                    .popup__body-details-item-name Price
+                    .popup__body-details-item-value.popup_price
+                .popup__body-details-item
+                    .popup__body-details-item-name Minimum Received
+                    .popup__body-details-item-value.popup_min_received
+                .popup__body-details-item
+                    .popup__body-details-item-name Price Impact
+                    .popup__body-details-item-value.popup_price_impact
+                .popup__body-details-item
+                    .popup__body-details-item-name Liquidity Provider Fee
+                    .popup__body-details-item-value.popup_lp_fee
+            button.btn.btn-big.js-confirm-btn.popup__body-btn(data-event-click="onConfirmSwap") Confirm Swap
+
+.popup-overlay#pending_transaction
+    .popup
+        .popup__close.js-popup-close
+        .popup__pending
+            .popup__pending-spinner 
+                img(src="images/ellipse.svg", alt="")
+            .popup__pending-details
+                .popup__pending-details-title Waiting For Confirmation
+                .popup__pending-details-info
+                .popup__pending-details-note Confirm this transaction in your wallet
+
+.popup-overlay#confirm_supply
+    .popup.popup--select-token
+        .popup__close.js-popup-close
+        .popup__title
+            h6 Confirm Supply
+        .popup__body
+            .popup__body-content 
+                .popup__body-content-title You will receive 
+                .popup__body-content-reward 
+                    span.popup__body-content-reward-amount 
+                    img.popup__body-content-reward-token0
+                    img.popup__body-content-reward-token1
+                .popup__body-content-pool 
+            .popup__body-desc Output is estimated. If the price changes by more than 0.5% your transaction will revert.
+            .popup__body-details
+                .popup__body-details-item
+                    .popup__body-details-item-name.token0
+                    .popup__body-details-item-value.token0 
+                        img.popup__body-details-item-value-image
+                        span.popup__body-details-item-value-text
+                .popup__body-details-desc
+                .popup__body-details-item
+                    .popup__body-details-item-name.token1
+                    .popup__body-details-item-value.token1
+                        img.popup__body-details-item-value-image
+                        span.popup__body-details-item-value-text
+                .popup__body-details-item.rates
+                    .popup__body-details-item-name Rates
+                    .popup__body-details-item-value.rates
+                .popup__body-details-item
+                    .popup__body-details-item-name Share of Pool:
+                    .popup__body-details-item-value.share-of-pool
+            button.btn.btn-big.js-confirm-btn.popup__body-btn(data-event-click="onConfirmSupply") Confirm Supply
+
+.popup-overlay#pending_supply
+    .popup
+        .popup__close.js-popup-close
+        .popup__pending
+            .popup__pending-spinner 
+                img(src="images/ellipse.svg", alt="")
+            .popup__pending-details
+                .popup__pending-details-title Waiting For Confirmation
+                .popup__pending-details-info
+                .popup__pending-details-note Confirm this transaction in your wallet
+
+.popup-overlay#transaction_status
+    .popup
+        .popup__close.js-popup-close
+        .popup__transaction
+            img.popup__transaction-img(src="images/swap/error.svg", alt="")
+            .popup__transaction-title Transaction Submitted
+            button.btn.btn-big.popup__transaction-btn(data-event-click="onModalClose")
+
+.popup-overlay#stake_asset(data-scroll-lock-scrollable)
+    form.popup#stake(data-submit="onStake")
+        .popup__close.js-popup-close
+        .popup__title
+            h6#stake_dialog_title
+        .search-input
+            input#available_amount(type="number" placeholder="0" data-event-input="onStakeInput" step="0.000000000000000001")
+            .max-input
+                a.js-input-max-balance(href="#" data-event-click="onStakeMaxAmount") MAX
+        .available-balance
+            .available-balance-title Available Balance 
+            .available-balance-value
+        input#current_pool_id(type="hidden" name="current_pool_id")
+        input#current_stake_type(type="hidden" name="current_stake_type")
+        input#current_pool_pair_name(type="hidden" name="current_pool_pair_name")
+        button.btn.btn-big.js-confirm-btn.popup__body-btn Confirm
+
+.popup-overlay#confirm_remove
+    .popup.popup--select-token
+        .popup__close.js-popup-close
+        .popup__title
+            h6 You will receive
+        .popup__remove
+            .popup__remove-token.popup__remove-token0
+            .popup__remove-plus +
+            .popup__remove-token.popup__remove-token1
+            .popup__remove-note Output is estimated. If the price changes by more than 1% your transaction will revert.
+            .popup__remove-burn
+            .popup__remove-price
+            button.btn.btn-big.popup__body-btn(data-event-click="onConfirmRemove") Confirm

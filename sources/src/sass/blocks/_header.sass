@@ -1,0 +1,194 @@
+.header
+    width: 100%
+    min-width: 360px
+    position: fixed
+    top: 0
+    left: 0
+    padding: 29px 0 30px
+    transition: all .2s ease
+    z-index: 999
+    @media (max-width: 767px)
+        padding: 17px 0
+    &.is-fixed
+        background-color: #fff
+        box-shadow: 0px 2px 2px rgba(0,0,0, .02)
+        padding: 14px 0 15px
+
+    .container
+        display: flex
+        justify-content: space-between
+        align-items: center
+
+    &__logo
+        position: relative
+        display: flex
+        align-items: flex-start
+        z-index: 9
+        &-text
+            border-left: 1px solid #ebebeb
+            padding-left: 24px
+            margin-top: 7px
+            margin-left: 24px
+            font-family: $muksb
+            font-size: 18px
+            line-height: 27px
+            color: $orange2
+            transition: border .2s ease
+            @media (max-width: 1099px)
+                padding-left: 16px
+                margin-left: 16px
+        @media (max-width: 767px)
+            img
+                max-width: 131px
+            &-text
+                font-size: 16px
+                line-height: 24px
+                margin-top: 5px
+
+    &__menu
+        transition: background .2s ease
+        @media (min-width: 1024px)
+            display: block !important
+            align-items: center
+        @media (max-width: 1023px)
+            width: 100%
+            height: calc(var(--vh, 1vh) * 100)
+            background-color: #fff
+            position: absolute
+            top: 0
+            left: 0
+            padding-top: 100px
+        @media (max-width: 767px)
+            padding-top: 70px
+        &-inner
+            display: flex
+            align-items: center
+            @media (max-width: 1023px)
+                flex-direction: column
+                justify-content: center
+                overflow-y: auto
+                height: calc((var(--vh, 1vh) * 100) - 70px)
+                padding: 50px 0
+            @media (max-height: 600px)
+                display: block
+        .btn-gradient
+            width: 128px
+            flex-shrink: 0
+            border-radius: 10px
+            @media (max-height: 600px)
+                display: flex
+                margin: 0 auto
+
+    &__nav
+        display: flex
+        margin-right: 42px
+        margin: auto
+        @media (max-width: 1099px)
+            margin-right: 36px
+        @media (max-width: 1023px)
+            flex-direction: column
+            align-items: center
+            margin: 0 0 60px
+        .header__menu-main
+            position: relative
+            margin-right: 40px
+            @media (max-width: 1099px)
+                margin-right: 30px
+            @media (max-width: 1023px)
+                font-size: 20px
+                margin: 0 0 20px
+            &:last-child
+                margin: 0
+            a
+                display: block
+                font-family: $mukm
+                border-bottom: 1px solid transparent
+                &:hover
+                    color: $orange2
+                &.active
+                    color: $orange2
+                    border-color: $orange2
+            .header__menu-submenu
+                opacity: 0
+                transition: all .2s linear
+                width: 150%
+                position: absolute
+                top: 30px
+                left: 0
+                height: 0
+                overflow: hidden
+                @media (max-width: 1023px)
+                    width: 100%
+                    opacity: 1
+                    transition: none
+                    position: relative
+                    height: unset
+                    overflow: initial
+                    top: unset
+                    left: unset
+                    margin-top: 10px
+                ul
+                    margin-top: 10px
+                    padding: 15px 15px 0px 15px
+                    border: 1px solid #efefef
+                    border-radius: 5px
+                    background-color: #fff
+                    @media (max-width: 1023px)
+                        padding: 0px
+                        margin-top: 0
+                        border: none
+                        text-align: center
+                    a
+                        margin-bottom: 10px
+                        text-decoration: none
+                        border: none
+                &.selected
+                    opacity: 1
+                    top: 20px
+                    height: 100%
+                    overflow: initial
+
+            
+
+    .dark-mode-toggle
+        margin-right: 36px
+        @media (max-width: 1023px)
+            margin: 0 0 60px
+        @media (max-height: 600px)
+            display: flex
+            width: 72px
+            margin: 0 auto 60px
+
+    .hamburger
+        display: none
+        font-size: 0
+        @media (max-width: 1023px)
+            display: inline-block
+
+    &--inner
+        background-color: #fff
+        box-shadow: 0px 2px 2px rgba(0,0,0, .02)
+        padding: 14px 0 15px
+        @media (min-width: 1100px)
+            .header__menu
+                flex-grow: 1
+                &-inner
+                    justify-content: space-between
+        @media (max-height: 659px)
+            .header__menu-inner
+                display: block
+        .btns
+            display: flex
+            align-items: center
+            @media (max-width: 1023px)
+                flex-direction: column
+        .dark-mode-toggle
+            margin-right: 30px
+            @media (max-width: 1023px)
+                margin-right: 0
+            @media (max-height: 659px)
+                margin: 0 auto 60px
+        .btn-biege
+            width: 148px
+            border-radius: 10px
+            overflow: hidden

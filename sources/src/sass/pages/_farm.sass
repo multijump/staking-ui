@@ -1,0 +1,323 @@
+.farm
+    padding: 70px 0
+
+    .container
+        @media (max-width: 1023px)
+            overflow-x: auto
+    &-table-wrap
+        position: relative
+        padding-bottom: 40px
+        // @media (max-width: 1023px)
+        //     display: flex
+        //     &::after
+        //         content: ''
+        //         display: block
+        //         width: 20px
+        //         flex-shrink: 0
+
+    &-table
+        border-collapse: collapse
+        width: 100%
+        // min-width: 984px
+        background: #FFF
+        border: 1px solid #F2F2F2
+        box-shadow: 0px 0px 20px rgba(0,0,0, .05)
+        border-radius: 13px
+        font-family: $mukm
+        font-size: 15px
+        transition: all .2s ease
+        thead
+            border-bottom: 1px solid #E6E6E6
+            text-align: left
+            transition: border .2s ease
+            @include breakpoint-tablet-sm-max
+                display: none
+            th
+                vertical-align: top
+                font-weight: normal
+                padding: 20px 15px
+                transition: color .2s ease
+                @include breakpoint-tablet-sm-max
+                    display: block
+                    padding: 5px 15px
+                &:first-child
+                    padding-left: 30px
+                    @include breakpoint-tablet-sm-max
+                        padding-left: 15px
+                &:last-child
+                    padding-right: 30px
+                    @include breakpoint-tablet-sm-max
+                        display: none
+                &.farm-table-header
+                    cursor: pointer
+                    position: relative
+                    transition: all ease 0.3s
+                    &:hover
+                        color: #ff6616
+                    &::after
+                        content: ""
+                        position: absolute
+                        right: 0
+                        top: 50%
+                        transform: translateY(-50%)
+                        width: 0px
+                        height: 0px
+                        border-style: solid
+                        border-width: 8px 5px 0px
+                        border-color: transparent
+                        border-top-color: #ff6616
+                        opacity: 0
+                        box-sizing: border-box
+                    &.desc
+                        &::after
+                            border-width: 8px 5px 0px
+                            border-top-color: #ff6616
+                            border-bottom-color: #ff6616
+                            opacity: 1
+                    &.asc
+                        &::after 
+                            border-width: 0px 5px 8px
+                            border-top-color: #ff6616
+                            border-bottom-color: #ff6616
+                            opacity: 1
+            .farm-table-header-liquidity
+                display: flex
+                @include breakpoint-tablet-max
+                    display: none
+                @include breakpoint-tablet-sm-max
+                    display: flex
+        tbody
+            tr
+                border-bottom: 1px solid #E6E6E6
+                transition: border .2s ease
+                &:first-child
+                &:last-child
+                    border-bottom: none
+                &.farm-item
+                    @include breakpoint-tablet-sm-max
+                        border-top: 1px solid #E6E6E6
+            td
+                vertical-align: top
+                transition: color .2s ease
+                padding: 25px 15px
+                @include breakpoint-tablet-lg-max
+                    padding: 25px 5px
+                @include breakpoint-tablet-sm-max
+                    display: flex
+                    justify-content: space-between
+                    padding: 10px 15px
+                .cell-title
+                    display: none
+                    font-weight: 600
+                    color: #3e3e3e
+                    @include breakpoint-tablet-sm-max
+                        display: block
+                div
+                    @include breakpoint-tablet-sm-max
+                        display: flex
+                        align-items: center
+                        justify-content: flex-start
+                &.td-btns
+                    width: 140px
+                    min-width: 140px
+                    padding: 15px
+                    text-align: center
+                    @include breakpoint-tablet-sm-max
+                        width: 100%
+                        min-width: 100%
+                    .btn
+                        display: flex
+                        width: 140px
+                        height: 32px
+                        border-radius: 11px
+                        margin-bottom: 3px
+                        @include breakpoint-notebook-max
+                            width: 100px
+                        @include breakpoint-tablet-lg-max
+                            width: 80px
+                        @include breakpoint-tablet-sm-max
+                            width: 30%
+                        &:last-child
+                            margin-bottom: 0
+                &.td-apy-raised
+                    color: #24ad03
+                    font-weight: bold
+                    &--value
+                        text-overflow: ellipsis
+                        overflow: hidden
+                        display: inline-block
+                        white-space: nowrap
+                        @include breakpoint-tablet-lg-max
+                            width: 50px
+                &.td-apy-down
+                    color: #ff6616
+                &:first-child
+                    padding-left: 30px
+                    @include breakpoint-tablet-sm-max
+                        padding-left: 15px
+                &:last-child
+                    padding-right: 30px
+                .cell-farms
+                    display: flex
+                    &__icons
+                        position: relative
+                        width: 33px
+                        height: 33px
+                        flex-shrink: 0
+                        margin-top: 2px
+                        margin-right: 10px
+                        .first-icon
+                            width: 20px
+                            height: 20px
+                            position: absolute
+                            top: 0
+                            left: 0
+                        .second-icon
+                            width: 24px
+                            height: 24px
+                            border: 2px solid #fff
+                            border-radius: 100%
+                            position: absolute
+                            right: 0
+                            bottom: 0
+                            z-index: 2
+                            transition: border .2s ease
+                    &__text
+                        p
+                            font-family: $mukb
+                            margin-bottom: 3px
+                            @include breakpoint-tablet-sm-max
+                                display: none
+                        .descr
+                            font-family: $muk
+                            color: #b6b6b6
+                            @include breakpoint-tablet-sm-max
+                                color: #3e3e3e
+                                font-weight: 600
+                .cell-yield
+                    display: flex
+                    &__icon
+                        width: 20px
+                        height: 20px
+                        flex-shrink: 0
+                        margin-top: 2px
+                        margin-right: 10px
+                    &__text
+                        @include breakpoint-tablet-sm-max
+                            display: block
+                        p
+                            font-family: $mukm
+                            margin-bottom: 3px
+                        .descr
+                            background-color: #F5F5F5
+                            border-radius: 7px
+                            font-family: $muk
+                            line-height: 1.55
+                            color: $gray
+                            padding: 0 6px
+                            margin-left: -6px
+                .cell-staked
+                    @include breakpoint-tablet-sm-max
+                        display: block
+                    .descr
+                        color: #8b8b8b
+                        margin-top: 5px
+                .cell-earned
+                    display: flex
+                    @include breakpoint-tablet-sm-max
+                        align-items: flex-start
+                    &__icon
+                        width: 20px
+                        height: 20px
+                        flex-shrink: 0
+                        margin-top: 2px
+                        margin-right: 10px
+                    &__text
+                        @include breakpoint-tablet-sm-max
+                            display: block
+                        p
+                            font-family: $mukm
+                            margin-bottom: 3px
+                        .descr
+                            font-family: $muk
+                            color: $gray
+                            width: 140px
+                            @include breakpoint-tablet-lg-max
+                                width: 100px
+                .farm-loading
+                    width: 100%
+                    min-height: 400px
+                    display: flex
+                    align-items: center
+                    justify-content: center
+                    .loading
+                        display: inline-block
+                        position: relative
+                        width: 80px
+                        height: 80px
+                        div
+                            box-sizing: border-box
+                            display: block
+                            position: absolute
+                            width: 64px
+                            height: 64px
+                            margin: 8px
+                            border: 8px solid #8b8b8b
+                            border-radius: 50%
+                            animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite
+                            border-color: #8b8b8b transparent transparent transparent
+                            &:nth-child(1)
+                                animation-delay: -0.45s
+                            &:nth-child(2)
+                                animation-delay: -0.3s
+                            &:nth-child(3)
+                                animation-delay: -0.15s
+                .farm-no-pools
+                    display: flex
+                    align-items: center
+                    justify-content: center
+                    text-align: center
+                    min-height: 150px
+                    font-size: 20px
+            .farm-liquidity
+                display: flex
+                @include breakpoint-tablet-max
+                    display: none
+                @include breakpoint-tablet-sm-max
+                    display: flex
+                &-value
+                    text-overflow: ellipsis
+                    overflow: hidden
+                    display: inline-block
+                    white-space: nowrap
+                    @include breakpoint-tablet-lg-max
+                        width: 60px
+                    @include breakpoint-tablet-sm-max
+                        width: auto
+
+@keyframes lds-ring
+    0%
+        transform: rotate(0deg)
+    100%
+        transform: rotate(360deg)
+                                
+.cell-earned__text
+    text-align: center
+    a
+        width: 140px
+        height: 32px
+        @include breakpoint-notebook-max
+            width: 100px
+        @include breakpoint-tablet-lg-max
+            width: 90px
+        @include breakpoint-tablet-max
+            width: 80px
+        @include breakpoint-tablet-sm-max
+            width: 100px
+
+.td-apy-raised
+    white-space: nowrap
+
+.swap-toggle
+    margin-left: auto
+    margin-right: auto

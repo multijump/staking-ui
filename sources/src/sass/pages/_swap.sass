@@ -1,0 +1,398 @@
+.swap
+    padding: 30px 0
+    .container
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
+    &-toggle
+        display: flex
+        width: 100%
+        max-width: 340px
+        background-color: #fff
+        box-shadow: 0px 0px 20px rgba(0,0,0, .05)
+        border: 1px solid #F2F2F2
+        border-radius: 13px
+        padding: 6px 9px
+        margin-bottom: 30px
+        transition: all .2s ease
+        &__btn
+            position: relative
+            display: block
+            flex-grow: 1
+            cursor: pointer
+            &-label
+                display: block
+                width: 100%
+                border-radius: 8px
+                font-family: $mukm
+                line-height: 30px
+                text-align: center
+                transition: all .2s ease
+                padding: 0 10px
+            input
+                position: absolute
+                width: 1px
+                height: 1px
+                margin: -1px
+                border: 0
+                padding: 0
+                white-space: nowrap
+                clip-path: inset(100%)
+                clip: rect(0 0 0 0)
+                overflow: hidden
+                &:checked + .swap-toggle__btn-label
+                    background-color: $orange
+                    box-shadow: 0px 0px 20px rgba(0,0,0, .05)
+                    color: #fff
+    &-form
+        position: relative
+        display: block
+        width: 100%
+        max-width: 490px
+        background-color: #fff
+        box-shadow: 0px 0px 20px rgba(0,0,0, .05)
+        border: 1px solid #F2F2F2
+        border-radius: 13px
+        padding: 50px 60px
+        transition: all .2s ease
+        &.active
+            filter: unset
+        @media (max-width: 499px)
+            padding: 40px 20px
+        &__back
+            display: block
+            position: absolute
+            top: 26px
+            left: 36px
+            svg
+                path
+                    stroke: #333
+                    transition: all .2s ease
+        &__title
+            display: flex
+            justify-content: center
+            margin-bottom: 30px
+            h6
+                font-family: $muksb
+                font-size: 20px
+        &__notice,
+        &-import__notice,
+            background-color: #fbfbfb
+            border-radius: 10px
+            color: $orange
+            padding: 20px 30px
+            margin-bottom: 40px
+            transition: all .2s ease
+            h6
+                font-family: $muksb
+                font-size: 17px
+                margin-bottom: 10px
+            p
+                line-height: 1.375
+                margin-bottom: 15px
+                white-space: normal
+                &:last-child
+                    margin-bottom: 0
+            &.warning
+                text-align: center
+                img
+                    margin: auto
+        &__settings
+            margin-bottom: 40px
+            display: flex
+            &-slippage
+                flex: 1
+                display: flex
+                flex-direction: column
+                align-items: flex-start
+                &-title
+                    display: flex
+                    align-items: center
+                    span
+                        font-family: Mukta-Medium
+                        font-size: 14px
+                        line-height: 22px
+                        color: #3e3e3e
+                    img
+                        margin-left: 4px
+                &-values
+                    display: flex
+                    width: 100%
+                    margin-top: 10px
+                    &-item
+                        flex: 1
+                        display: flex
+                        align-items: center
+                        justify-content: center
+                        border-radius: 8px
+                        text-align: center
+                        margin-right: 8px
+                        height: 32px
+                        cursor: pointer
+                        border: 1px solid rgb(237, 238, 242)
+                        background-color: #F7F8FA
+                        transition: all 0.3s ease
+                        &:hover
+                            color: #FFFFFF
+                            background-color: #FF8F07
+                        &.active
+                            color: #FFFFFF
+                            background-color: #FF6616
+                            transition: all 0.3s ease
+                            &:hover
+                                background-color: #FF8F07
+            &-deadline
+                flex: 1
+                display: flex
+                flex-direction: column
+                align-items: flex-end
+                &-title
+                    display: flex
+                    align-items: center
+                    span
+                        font-family: Mukta-Medium
+                        font-size: 14px
+                        line-height: 22px
+                        color: #3e3e3e
+                    img
+                        margin-left: 4px
+                &-values
+                    display: flex
+                    align-items: center
+                    margin-top: 10px
+                    justify-content: flex-end
+                    input
+                        width: 50%
+                        height: 32px
+                        padding: 0 14px
+                        &::-webkit-outer-spin-button
+                        &::-webkit-inner-spin-button
+                            -webkit-appearance: none
+                            margin: 0
+                    span
+                        margin-left: 5px
+        &__inputs
+            margin-bottom: 40px
+        &__input
+            position: relative
+            background-color: #fff
+            box-shadow: 0px 0px 4px rgba(0,0,0, .07)
+            border: 1px solid #EFEFEF
+            border-radius: 8px
+            height: 60px
+            padding: 6px 16px
+            transition: all .2s ease
+            &-header
+                display: flex
+                align-items: center
+                justify-content: space-between
+                &-title
+                    font-family: $mukm
+                    font-size: 14px
+                    line-height: 22px
+                    color: #3e3e3e
+                &-balance
+                    font-family: $mukm
+                    font-size: 14px
+                    line-height: 22px
+                    color: #3e3e3e
+                    span
+                        margin-left: 5px
+                        color: #ff5934
+                        cursor: pointer
+            &-row
+                display: flex
+                align-items: center
+            input[data-event-input]
+                height: 24px
+                box-shadow: none
+                border: none
+                flex-grow: 1
+                outline: none
+                font-size: 18px
+                padding: 0 16px 0 0
+                background: transparent
+                &::-webkit-outer-spin-button
+                &::-webkit-inner-spin-button
+                    -webkit-appearance: none
+                    margin: 0
+            .select-token
+                position: relative
+                display: flex
+                align-items: center
+                flex-shrink: 0
+                white-space: nowrap
+                background-color: #FF8F07
+                border-radius: 5px
+                font-family: $mukm
+                font-size: 13px
+                line-height: 24px
+                color: #fff
+                padding: 0 26px 0 12px
+                transition: all .2s ease
+                &::after
+                    content: ''
+                    display: block
+                    width: 8px
+                    height: 4px
+                    background-image: url("data:image/svg+xml,%3Csvg width='8' height='4' viewBox='0 0 8 4' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0.145639 0.207961C0.361988 -0.0428071 0.74066 -0.0707093 0.991428 0.145639L3.99434 2.73638L6.99725 0.145639C7.24802 -0.070709 7.62669 -0.0428071 7.84304 0.20796C8.05939 0.458728 8.03148 0.837401 7.78072 1.05375L4.64695 3.75739C4.27201 4.08087 3.71667 4.08087 3.34172 3.75739L0.207961 1.05375C-0.0428071 0.837401 -0.0707093 0.458728 0.145639 0.207961ZM3.8639 3.15214C3.93884 3.21679 4.04984 3.21679 4.12478 3.15214L7.25854 0.448501C7.34204 0.376461 7.46813 0.385752 7.54017 0.469253C7.61222 0.552755 7.60292 0.678847 7.51942 0.750887L4.38566 3.45452C4.16083 3.64849 3.82784 3.64849 3.60301 3.45452L0.469253 0.750887C0.385752 0.678847 0.376461 0.552755 0.448501 0.469253C0.520542 0.385752 0.646634 0.376461 0.730135 0.448501L3.8639 3.15214Z' fill='white'/%3E%3Cpath d='M3.8639 3.15214C3.93884 3.21679 4.04984 3.21679 4.12478 3.15214L7.25854 0.448501C7.34204 0.376461 7.46813 0.385752 7.54017 0.469253C7.61222 0.552755 7.60292 0.678847 7.51942 0.750887L4.38566 3.45452C4.16083 3.64849 3.82784 3.64849 3.60301 3.45452L0.469253 0.750887C0.385752 0.678847 0.376461 0.552755 0.448501 0.469253C0.520542 0.385752 0.646634 0.376461 0.730135 0.448501L3.8639 3.15214Z' fill='white'/%3E%3C/svg%3E")
+                    background-size: cover
+                    position: absolute
+                    top: 50%
+                    right: 10px
+                    transform: translateY(-50%)
+                &:hover
+                    background-color: $orange
+                &.selected
+                    background-color: #fff
+                    font-size: 16px
+                    color: #3a3a3a
+                    text-transform: uppercase
+                    padding: 0 16px 0 0
+                    img
+                        width: 24px
+                        height: 24px
+                        margin-right: 8px
+                    &::after
+                        background-image: url("data:image/svg+xml,%3Csvg width='8' height='4' viewBox='0 0 8 4' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0.145639 0.207961C0.361988 -0.0428071 0.74066 -0.0707093 0.991428 0.145639L3.99434 2.73638L6.99725 0.145639C7.24802 -0.070709 7.62669 -0.0428071 7.84304 0.20796C8.05939 0.458728 8.03148 0.837401 7.78072 1.05375L4.64695 3.75739C4.27201 4.08087 3.71667 4.08087 3.34172 3.75739L0.207961 1.05375C-0.0428071 0.837401 -0.0707093 0.458728 0.145639 0.207961ZM3.8639 3.15214C3.93884 3.21679 4.04984 3.21679 4.12478 3.15214L7.25854 0.448501C7.34204 0.376461 7.46813 0.385752 7.54017 0.469253C7.61222 0.552755 7.60292 0.678847 7.51942 0.750887L4.38566 3.45452C4.16083 3.64849 3.82784 3.64849 3.60301 3.45452L0.469253 0.750887C0.385752 0.678847 0.376461 0.552755 0.448501 0.469253C0.520542 0.385752 0.646634 0.376461 0.730135 0.448501L3.8639 3.15214Z' fill='black'/%3E%3Cpath d='M3.8639 3.15214C3.93884 3.21679 4.04984 3.21679 4.12478 3.15214L7.25854 0.448501C7.34204 0.376461 7.46813 0.385752 7.54017 0.469253C7.61222 0.552755 7.60292 0.678847 7.51942 0.750887L4.38566 3.45452C4.16083 3.64849 3.82784 3.64849 3.60301 3.45452L0.469253 0.750887C0.385752 0.678847 0.376461 0.552755 0.448501 0.469253C0.520542 0.385752 0.646634 0.376461 0.730135 0.448501L3.8639 3.15214Z' fill='black'/%3E%3C/svg%3E")
+                        right: 0
+                    &:hover
+                        background: none
+            &-divider
+                font-size: 0
+                padding-left: 16px
+                margin: 20px 0
+                .input-divider
+                    display: inline-block
+                    svg
+                        path
+                            stroke: #000
+                            transition: all .2s ease
+                    &.js-input-swap
+                        cursor: pointer
+        &__price
+            &-content
+                display: flex
+                justify-content: space-between
+                align-items: center
+                padding: 0 16px 20px
+                &-label
+                    font-family: $mukm
+                    font-size: 14px
+                    line-height: 1.65
+                    color: #3e3e3e
+                    transition: color .2s ease
+                &-value
+                    font-family: $mukm
+                    font-size: 14px
+                    line-height: 1.65
+                    color: #3e3e3e
+                    transition: color .2s ease
+        .swap-form__pool-share
+            font-weight: 600
+            &-title
+                font-size: 16px
+                margin-bottom: 20px
+            &-content
+                display: flex
+                justify-content: space-between
+                align-items: center
+                padding: 0 0 20px
+                &__item
+                    text-align: center
+                    &-label
+                        font-family: $mukm
+                        font-size: 14px
+                        line-height: 1.65
+                        color: #6f6f6f
+                        transition: color .2s ease
+                    &-value
+                        font-family: $mukm
+                        font-size: 14px
+                        line-height: 1.65
+                        color: #4e4e4e
+                        transition: color .2s ease
+        .btn
+            width: 100%
+
+        &--create
+            padding-top: 24px
+            .swap-form__input-divider
+                margin: 15px 0
+            .swap-form__price
+                margin-bottom: 50px
+                &-title
+                    padding-top: 20px
+    &-footer
+        display: flex
+        flex-direction: column
+        max-width: 490px
+        width: 100%
+        padding: 32px
+        background-color: rgba(255, 255, 255, 0.6)
+        
+        &-row
+            display: flex
+            justify-content: space-between
+            align-items: center
+            margin: 5px 0
+            &-label
+                display: flex
+                align-items: center
+                span
+                    font-size: 16px
+                img
+                    margin-left: 4px
+            &-value
+                display: flex
+                flex: 0.9
+                flex-wrap: wrap
+                align-items: center
+                justify-content: flex-end
+                font-family: $muksb
+                font-size: 16px
+                &.green
+                    color: rgb(39, 174, 96)
+                &.red
+                    color: rgb(253, 64, 64)
+                img
+                    width: 20px
+                    height: 20px
+                    margin-left: 4px
+                    margin-right: 4px
+        &-content
+            &-title
+                font-size: 20px
+                font-weight: 600
+                margin-bottom: 20px
+            &-body
+                display: grid
+                grid-auto-flow: auto
+                row-gap: 12px
+                font-weight: 600
+                &-item
+                    font-size: 16px
+                    box-sizing: border-box
+                    margin: 0
+                    min-width: 0px
+                    width: 100%
+                    display: flex
+                    padding: 0
+                    -webkit-box-align: center
+                    align-items: center
+                    -webkit-box-pack: justify
+                    justify-content: space-between
+                    &-label
+                        display: flex
+                        justify-content: flex-start
+                        &-images
+                            display: flex
+                            justify-content: flex-start
+                            img
+                                margin-right: 5px
+                                width: 24px
+                                height: 24px
+                        &-text
+                            margin-left: 10px
+                    &-value

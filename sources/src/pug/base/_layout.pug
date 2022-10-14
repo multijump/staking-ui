@@ -1,0 +1,61 @@
+include _vars
+include _mixins
+doctype html
+html(lang="en")
+    head
+        block head
+            title Swipe Swap - DeFi
+        
+        meta(charset="utf-8")
+        meta(name='keywords' content='Swipe Swap')
+
+        meta(http-equiv="X-UA-Compatible" content="IE=edge")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        meta(name="format-detection" content="telephone=no")
+        
+        link(rel="shortcut icon" href="images/favicons/favicon.ico" type="image/x-icon")
+
+        link(rel="manifest" href="images/favicons/manifest.json")
+        link(rel='canonical' href='https://swipe.org')
+
+        meta(name="msapplication-TileColor" content="#ffffff")
+        meta(name="msapplication-TileImage" content="images/favicons/mstile-144x144.png")
+        meta(name="msapplication-config" content="images/favicons/browserconfig.xml")
+        meta(name="theme-color" content="#ffffff")
+        meta(name='apple-mobile-web-app-title' content='Swipe Swap')
+        meta(name='application-name' content='Swipe Swap')
+        meta(name='title' content='Test')
+        meta(name='description' content='Test')
+
+        link(rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css")
+        link(rel="stylesheet" href="css/main.css")
+
+        script(src="https://code.jquery.com/jquery-3.5.1.min.js")
+        script(src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js")
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/bignumber.js/8.0.2/bignumber.min.js")
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/date-fns/1.30.1/date_fns.min.js")
+        include ../blocks/_wallet-connect
+
+    body
+        .layout
+            block header
+                include ../blocks/_header
+            block main
+                include ../blocks/_main
+            block footer
+                include ../blocks/_footer
+            block popups
+                include ../blocks/_popups
+                include ../blocks/_services
+        block js
+            script(src="js/common.js")
+            script(src="js/utils.js")
+            script(src="js/connect.js")
+            script(src="js/event.js")
+            script(src="js/services.js")
+            script(src="js/api.js")
+            script(src="js/index.js")
+            script(src="js/main.js")
+            script(src="js/constants.js")
+            script(src="js/data.lib.js")
+        block scripts

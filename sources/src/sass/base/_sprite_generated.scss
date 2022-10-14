@@ -1,0 +1,183 @@
+%svg-common {
+	background: url("../images/sprites/main.svg") no-repeat;
+}
+
+.svg-image-discord {
+	@extend %svg-common;
+	background-position: 0 0;
+	background-size: (106/43)*100% auto;
+	width: 43px;
+
+}
+@mixin svg-pos-image-discord {
+	background-position: 0 0;
+}
+@mixin svg-image-discord-hover {
+	.svg-image-discord {
+		@include svg-pos-image-discord-hover
+	}
+}
+
+.svg-image-discord:before {
+	content:"";
+	display:block;
+	font-size:0;
+	line-height:0;
+	padding-top: (32/43)*100%;
+}
+
+.svg-image-discord-dims {
+	width: 43px;
+	height: 32px;
+}
+
+.svg-image-discourse {
+	@extend %svg-common;
+	background-position: 0 57.142857142857146%;
+	background-size: (106/41)*100% auto;
+	width: 41px;
+
+}
+@mixin svg-pos-image-discourse {
+	background-position: 0 57.142857142857146%;
+}
+@mixin svg-image-discourse-hover {
+	.svg-image-discourse {
+		@include svg-pos-image-discourse-hover
+	}
+}
+
+.svg-image-discourse:before {
+	content:"";
+	display:block;
+	font-size:0;
+	line-height:0;
+	padding-top: (40/41)*100%;
+}
+
+.svg-image-discourse-dims {
+	width: 41px;
+	height: 40px;
+}
+
+.svg-image-facebook {
+	@extend %svg-common;
+	background-position: 100% 0;
+	background-size: (106/22)*100% auto;
+	width: 22px;
+
+}
+@mixin svg-pos-image-facebook {
+	background-position: 100% 0;
+}
+@mixin svg-image-facebook-hover {
+	.svg-image-facebook {
+		@include svg-pos-image-facebook-hover
+	}
+}
+
+.svg-image-facebook:before {
+	content:"";
+	display:block;
+	font-size:0;
+	line-height:0;
+	padding-top: (36/22)*100%;
+}
+
+.svg-image-facebook-dims {
+	width: 22px;
+	height: 36px;
+}
+
+.svg-image-plus-round {
+	@extend %svg-common;
+	background-position: 0 100%;
+	background-size: (106/24)*100% auto;
+	width: 24px;
+
+}
+@mixin svg-pos-image-plus-round {
+	background-position: 0 100%;
+}
+@mixin svg-image-plus-round-hover {
+	.svg-image-plus-round {
+		@include svg-pos-image-plus-round-hover
+	}
+}
+
+.svg-image-plus-round:before {
+	content:"";
+	display:block;
+	font-size:0;
+	line-height:0;
+	padding-top: (24/24)*100%;
+}
+
+.svg-image-plus-round-dims {
+	width: 24px;
+	height: 24px;
+}
+
+.svg-image-telegram {
+	@extend %svg-common;
+	background-position: 66.15384615384616% 0;
+	background-size: (106/41)*100% auto;
+	width: 41px;
+
+}
+@mixin svg-pos-image-telegram {
+	background-position: 66.15384615384616% 0;
+}
+@mixin svg-image-telegram-hover {
+	.svg-image-telegram {
+		@include svg-pos-image-telegram-hover
+	}
+}
+
+.svg-image-telegram:before {
+	content:"";
+	display:block;
+	font-size:0;
+	line-height:0;
+	padding-top: (34/41)*100%;
+}
+
+.svg-image-telegram-dims {
+	width: 41px;
+	height: 34px;
+}
+
+.svg-image-twitter {
+	@extend %svg-common;
+	background-position: 64.17910447761194% 53.125%;
+	background-size: (106/39)*100% auto;
+	width: 39px;
+
+}
+@mixin svg-pos-image-twitter {
+	background-position: 64.17910447761194% 53.125%;
+}
+@mixin svg-image-twitter-hover {
+	.svg-image-twitter {
+		@include svg-pos-image-twitter-hover
+	}
+}
+
+.svg-image-twitter:before {
+	content:"";
+	display:block;
+	font-size:0;
+	line-height:0;
+	padding-top: (32/39)*100%;
+}
+
+.svg-image-twitter-dims {
+	width: 39px;
+	height: 32px;
+}
+
+
+.image-by-height { width:auto; }
+.image-by-height:before { content:none; }
+.image-by-height > svg { height: inherit; }
+.image-by-height > img { height: inherit !important; vertical-align: top !important; margin: 0 !important; padding: 0 !important; max-width: none !important; max-height: none !important; border: 0 !important; opacity: 0 !important; }

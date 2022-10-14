@@ -1,0 +1,364 @@
+@import "./normalize"
+@import "./vars"
+@import "./mixins"
+@import "./fonts"
+@import "./sprite_generated"
+
+
+// From libs:
+@import "../../libs/hamburgers/_sass/hamburgers/hamburgers"
+// @import "../../libs/swiper/swiper.scss"
+
+
+// Fonts
+$muk: 'Mukta-Regular'
+$mukl: 'Mukta-Light'
+$mukm: 'Mukta-Medium'
+$muksb: 'Mukta-SemiBold'
+$mukb: 'Mukta-Bold'
+$ttnm: 'TTNorms-Medium'
+
+
+*, *::before, *::after
+    padding: 0
+    margin: 0
+    box-sizing: border-box
+    // min-height: 0.001vw; // — Fixes Safari bug with viewport units in calc()
+
+html, body
+    font: normal normal 16px/1.2 $muk, sans-serif, Arial
+    -webkit-font-smoothing: antialiased
+    -moz-osx-font-smoothing: grayscale
+    -webkit-overflow-scrolling: touch
+    background-color: #fff
+    color: $text
+    min-width: 360px
+    width: 100%
+    transition: background .2s ease
+
+h1
+    font-family: $mukb
+    font-weight: normal
+    margin: 0
+    @include fluidFontSize(36px, 68px, 360px, 1300px, 68px)
+h2
+    font-family: $mukb
+    font-weight: normal
+    margin: 0
+    @include fluidFontSize(32px, 40px, 360px, 768px, 40px)
+h3
+    font-family: $mukb
+    font-weight: normal
+    margin: 0
+    @include fluidFontSize(28px, 36px, 360px, 768px, 36px)
+h4
+    font-family: $mukb
+    font-weight: normal
+    margin: 0
+    @include fluidFontSize(22px, 28px, 360px, 768px, 28px)
+h5
+    font-family: $mukb
+    font-size: 24px
+    font-weight: normal
+    margin: 0
+h6
+    font-family: $muksb
+    font-size: 18px
+    font-weight: normal
+    margin: 0
+
+a
+    color: $text
+    text-decoration: none
+    transition: all .3s ease
+    &:hover, &:visited, &:active, &:focus
+        text-decoration: none
+
+img, svg
+    display: block
+    max-width: 100%
+    height: auto
+
+ul
+    display: block
+    padding: 0
+    margin: 0
+
+li
+    list-style: none
+
+form
+    display: block
+
+button, input, textarea, select
+    font-family: $muk
+    line-height: normal
+    appearance: none
+    border: none
+    border-radius: 0
+
+input[type=text], input[type=search], input[type=email], input[type=password], input[type=number], textarea
+    display: block
+    width: 100%
+    height: 56px
+    background-color: #fff
+    box-shadow: 0px 0px 4px rgba(0,0,0, .07)
+    border: 1px solid #EAEAEA
+    border-radius: 8px
+    outline: none
+    padding: 0 28px
+    transition: all .2s ease
+    &::-webkit-input-placeholder
+        color: #c6c6c6
+        transition: opacity .3s ease
+    &::-moz-placeholder, &:-moz-placeholder
+        color: #c6c6c6
+        transition: opacity .3s ease
+    &:-ms-input-placeholder
+        color: #c6c6c6
+        transition: opacity .3s ease
+    &:focus
+        &::-webkit-input-placeholder
+            opacity: 0
+        &::-moz-placeholder, &:-moz-placeholder
+            opacity: 0
+        &:-ms-input-placeholder
+            opacity: 0
+
+.main
+    flex-grow: 1
+    padding-top: 70px
+    transition: background .2s ease
+    &--home
+        background: url('../images/main-bg-1.png') center 0 no-repeat, url('../images/main-bg-2.png') center 1500px no-repeat
+        background-size: 100% auto
+        padding-top: 100px
+    &--404
+        text-align: center
+        margin-bottom: 50px
+        img
+            margin: 50px auto 20px
+        a
+            margin-top: 30px
+            width: 128px
+    &--flex
+        display: flex
+        flex-direction: column
+        justify-content: flex-start
+    &--biege
+        background-color: #fffdfd
+
+.section
+    position: relative
+
+.layout
+    position: relative
+    display: flex
+    flex-direction: column
+    overflow: hidden
+    width: 100%
+    max-width: 100%
+    min-width: 360px
+    min-height: 100vh
+
+.container
+    width: 100%
+    max-width: 1300px
+    padding: 0 20px
+    margin: 0 auto
+
+.mob-hidden
+    @media (max-width: 1023px)
+        display: none !important
+.desk-hidden
+    @media (min-width: 1024px)
+        display: none !important
+
+.object-fit-cover
+    object-fit: cover
+    font-family: 'object-fit: cover;'
+
+.icon
+    display: inline-block
+    flex-shrink: 0
+
+@keyframes spin
+    0%
+        transform: rotate(0)
+    100%
+        transform: rotate(360deg)
+
+
+.dark-mode-toggle
+    position: relative
+    display: inline-flex
+    background-color: #fff
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.03), 0px 0px 2px rgba(0, 0, 0, 0.07)
+    border-radius: 36px
+    padding: 9px 10px
+    cursor: pointer
+    transition: background .2s ease
+    &__inner
+        position: relative
+        display: flex
+        &::before
+            content: ''
+            display: block
+            width: 30px
+            height: 30px
+            background-color: #FFEDDD
+            border-radius: 100%
+            position: absolute
+            top: -6px
+            left: -6px
+            transition: all .3s ease
+        svg
+            position: relative
+            flex-shrink: 0
+            margin-right: 16px
+            z-index: 2
+            path
+                fill: #000
+                transition: fill .3s ease
+            &:last-child
+                margin-right: 0
+                path
+                    fill: #a9a9a9
+    input
+        position: absolute
+        width: 1px
+        height: 1px
+        margin: -1px
+        border: 0
+        padding: 0
+        white-space: nowrap
+        clip-path: inset(100%)
+        clip: rect(0 0 0 0)
+        overflow: hidden
+        &:checked + .dark-mode-toggle__inner
+            &::before
+                left: 26px
+            svg
+                path
+                    fill: #a9a9a9
+                &:last-child
+                    path
+                        fill: #000
+
+
+
+.btn
+    display: inline-flex
+    justify-content: center
+    align-items: center
+    flex-shrink: 0
+    height: 40px
+    background-color: $orange
+    font-family: $mukb
+    font-size: 14px
+    line-height: 1
+    color: #fff
+    border-radius: 8px
+    transition: all .3s ease
+    outline: none
+    user-select: none
+    cursor: pointer
+    &:hover
+        background-color: #e55b13
+    &-gradient
+        background: linear-gradient(236.25deg, #FF9803 0%, #FF4920 86.7%)
+        background-size: 100% 100%
+        box-shadow: 0px 6px 19px rgba(255,154,43, .2)
+        transition: all .5s ease
+        &:hover
+            background-size: 200% 100%
+    &-outline
+        background-color: #fff
+        border: 1px solid #eaeaea
+        color: $orange
+        &:hover
+            background-color: $orange
+            border-color: $orange
+            color: #fff
+    &-gray
+        background-color: #f8f8f8
+        color: #868686
+        &:hover
+            background-color: #868686
+            color: #f8f8f8
+    &-biege
+        background-color: #FFE6D5
+        color: $orange
+        &:hover
+            background-color: $orange
+            color: #fff
+    &-lbiege
+        background-color: #FFF8F3
+        color: $orange
+        &:hover
+            background-color: $orange
+            color: #fff
+    &-big
+        font-size: 16px
+        height: 56px
+        box-shadow: 0px 0px 14px rgba(255,102,22, .24)
+        font-size: 18px
+    &-link
+        background: none
+        color: $orange
+        &:hover
+            background: none
+            color: #e55b13
+    &-disabled
+        background-color: rgb(237, 238, 242)
+        color: rgb(136, 141, 155)
+        pointer-events: none
+        box-shadow: none
+
+
+
+.sec-header
+    background-color: #fffdfd
+    padding: 60px 0
+    transition: background .2s ease
+    &__title
+        display: flex
+        justify-content: center
+        align-items: center
+        width: 100%
+        max-width: 330px
+        height: 54px
+        background: #fff
+        border: 1px solid #F0F0F0
+        box-shadow: 0px 4px 4px rgba(0,0,0, .03)
+        border-radius: 13px
+        font-family: $muksb
+        font-size: 22px
+        color: $orange
+        padding: 0 20px
+        margin: 0 auto 22px
+        transition: all .2s ease
+    p
+        width: 100%
+        max-width: 490px
+        font-size: 18px
+        line-height: 1.65
+        color: #646464
+        text-align: center
+        margin: 0 auto
+        transition: color .2s ease
+.web3modal-modal-lightbox
+    position: absolute !important
+    left: -100vw !important
+    top: -100vh !important
+
+
+.ui-tooltip
+    max-width: 220px
+    font-family: Mukta-Medium
+    font-size: 14px
+    line-height: 22px
+    color: #3e3e3e
+
+.hidden
+    display: none

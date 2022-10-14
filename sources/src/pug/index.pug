@@ -1,0 +1,39 @@
+extends base/_layout
+block head
+    title Test App 
+block headerClass
+    - var activeItem = 'farm'
+block mainClass
+    - var mainClass = 'main--flex main--biege'
+block page
+    div#farm.farm
+        .container
+            .farm-table-wrap
+                table.farm-table
+                    thead
+                        tr
+                            th Token
+                            th.farm-table-header.farm-table-header-apy APY
+                            th.farm-table-header.farm-table-header-liquidity MAX Stake
+                            th.farm-table-header.farm-table-header-staked Staked
+                            th Earned
+                            th.farm-actions &nbsp;
+                    tbody#farm-table-body
+                        tr
+                            td(colspan=6)#loading
+                                .farm-loading
+                                    .loading
+                                        div
+                                        div 
+                                        div 
+                                        div 
+                        tr
+                            td(colspan=6 style="display: none")#no-pools
+                                .farm-no-pools There is no pools
+                                    
+
+block footer
+
+        block scripts
+            script(src="js/farm.js")
+            script(src="js/bsc.hook.js")

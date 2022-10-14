@@ -1,0 +1,12 @@
+.popup-overlay#transactions(data-scroll-lock-scrollable)
+    .popup.popup--select-token
+        .popup__close.js-popup-close
+        .popup__title
+            h6 Transactions
+        .transactions
+            .common-bases__title Recent transactions
+                span#clear-all(data-service-click="clear") (clear-all)
+            .transactions__description Your transactions will appear here...
+            .transactions__items
+                a(href="#" data-key="0x0000000000000000000000000000000000000000")
+                    span.ticker Waiting...

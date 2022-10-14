@@ -1,0 +1,62 @@
+extends base/_layout
+block head
+    title Add liquidity
+block mainClass
+    - var mainClass = 'main--flex main--biege'
+block page
+    .swap
+        .container
+            form(action="#" data-submit="disabled").swap-form
+                a(href="pool.html").swap-form__back
+                    svg(width='17' height='18' fill='none' version='1.1' viewBox='0 0 17 18' xmlns='http://www.w3.org/2000/svg')
+                        path(d='m17 8.8125h-15m-0.34375-0.53125 6.25 7.8125m-6.3125-6.6562 6.2812-8.125' stroke='#333' stroke-width='2')
+                .swap-form__title
+                    h6 Add liquidity
+                .swap-form__notice
+                .swap-form__settings
+                    .swap-form__settings-slippage
+                        .swap-form__settings-slippage-title
+                            span Slippage tolerance
+                            img(src="images/tip.svg", alt="", width="16", height="16", title="Your transaction will revert if the price changes unfavorably by more than this percentage.")
+                        .swap-form__settings-slippage-values
+                            .swap-form__settings-slippage-values-item(data-value="0.1") 0.1%
+                            .swap-form__settings-slippage-values-item.active(data-value="0.5") 0.5%
+                            .swap-form__settings-slippage-values-item(data-value="1") 1%
+                    .swap-form__settings-deadline
+                        .swap-form__settings-deadline-title
+                            span Transaction deadline
+                            img(src="images/tip.svg", alt="", width="16", height="16", title="Your transaction will revert if it is pending for more than this long.")
+                        .swap-form__settings-deadline-values
+                            input#swap-deadline(type="number" placeholder="20" min="0" data-event-input="onInputDeadline")
+                            span minutes
+                .swap-form__inputs
+                    .swap-form__input
+                        .swap-form__input-header
+                            .swap-form__input-header-title Input
+                            .swap-form__input-header-balance#balance-from(data-event-click="onBalance:from") Balance
+                                span -
+                        .swap-form__input-row(data-input="from")
+                            input#swap-from-token(type="number" placeholder="0.00" data-event-input="onInputAmount:from")
+                            a.base-token(href="#select_token" data-key="0x0000000000000000000000000000000000000000").select-token.selected.js-popup-open
+                                img#swap_from_img(src="images/eth.svg", alt="")
+                                span.ticker ETH
+                    .swap-form__input-divider
+                        .input-divider
+                            +icon('plus-round')
+                    .swap-form__input
+                        .swap-form__input-header
+                            .swap-form__input-header-title Input
+                            .swap-form__input-header-balance#balance-to(data-event-click="onBalance:to") Balance
+                                span -
+                        .swap-form__input-row(data-input="to")
+                            input#swap-to-token(type="number" placeholder="0.00" data-event-input="onInputAmount:to")
+                            a(href="#select_token").select-token.js-popup-open
+                                img#swap_to_img(src="#", alt="")
+                                span.ticker Select a Token
+                .swap-form__pool-share
+                .btn-add-liquidity
+            .swap-footer
+
+block footer
+block scripts
+    script(src="js/pool/add-liquidity.js")

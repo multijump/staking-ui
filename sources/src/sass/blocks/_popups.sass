@@ -1,0 +1,465 @@
+.popup-overlay
+    display: none
+    width: 100%
+    height: 100vh
+    font-size: 0
+    white-space: nowrap
+    text-align: center
+    background-color: rgba(#000, .6)
+    padding: 30px 0
+    position: fixed
+    overflow-y: auto
+    top: 0
+    left: 0
+    z-index: 9999
+    @media (max-width: 767px)
+        padding: 0
+    &::before
+        content: ''
+        display: inline-block
+        vertical-align: middle
+        width: 0
+        font-size: 0
+        height: 100%
+
+.popup
+    position: relative
+    display: inline-flex
+    flex-direction: column
+    vertical-align: middle
+    width: 100%
+    max-width: 500px
+    max-height: calc((var(--vh, 1vh) * 100) - 60px)
+    background-color: #fff
+    box-shadow: 0px 0px 20px rgba(0,0,0, .05)
+    border: 1px solid #f2f2f2
+    border-radius: 13px
+    font-size: 16px
+    text-align: left
+    padding: 24px 40px
+    transition: all .2s ease
+    @media (max-width: 767px)
+        max-height: calc(var(--vh, 1vh) * 100)
+    @media (max-width: 499px)
+        border-radius: 0
+        padding: 20px
+    &--select-token
+        min-height: 500px
+    &__close
+        width: 25px
+        height: 25px
+        position: absolute
+        top: 26px
+        right: 40px
+        z-index: 9
+        @media (max-width: 499px)
+            top: 23px
+            right: 20px
+        &::before
+            content: ''
+            display: block
+            width: 20px
+            height: 2px
+            background-color: #585858
+            border-radius: 2px
+            position: absolute
+            top: 50%
+            left: 50%
+            transform: translate(-50%, -50%) rotate(45deg)
+            transition: background .2s ease
+        &::after
+            content: ''
+            display: block
+            width: 20px
+            height: 2px
+            background-color: #585858
+            border-radius: 2px
+            position: absolute
+            top: 50%
+            left: 50%
+            transform: translate(-50%, -50%) rotate(-45deg)
+            transition: background .2s ease
+        &:hover
+            cursor: pointer
+            &::before, &::after
+                background-color: $text
+    &__title
+        text-align: center
+        padding: 0 30px
+        margin-bottom: 16px
+        h6
+            font-family: $muksb
+            font-size: 20px
+            line-height: 1.6
+            color: #3e3e3e
+            transition: color .2s ease
+        &--using
+            display: flex
+            justify-content: center
+            align-items: center
+            h6
+                font-size: 16px
+            img
+                width: 30px
+                margin-left: 10px
+    &__back
+        display: flex
+        justify-content: center
+        align-items: center
+        flex-shrink: 0
+        width: 25px
+        height: 25px
+        position: absolute
+        top: 26px
+        left: 40px
+        @media (max-width: 499px)
+            top: 23px
+            left: 20px
+            svg
+                path
+                    stroke: #333
+                    transition: all .2s ease
+    .search-input
+        position: relative
+        margin-bottom: 16px
+        [type="number"]
+            -moz-appearance: textfield
+            &::-webkit-outer-spin-button,
+            &::-webkit-inner-spin-button
+                -webkit-appearance: none
+                margin: 0
+        .max-input
+            position: absolute
+            top: 20px
+            right: 20px
+    .common-bases
+        &__title
+            font-family: $muksb
+            line-height: 1.6
+            color: #3e3e3e
+            margin-bottom: 14px
+        &__items
+            display: flex
+            flex-wrap: wrap
+            padding-bottom: 12px
+            margin-right: -7px
+            .cb-item
+                display: inline-flex
+                align-items: center
+                flex-shrink: 0
+                height: 50px
+                border: 1px solid #EBEBEB
+                border-radius: 50px
+                padding: 10px 14px 10px 12px
+                margin-right: 7px
+                margin-bottom: 14px
+                img
+                    width: 30px
+                    height: 30px
+                    margin-right: 8px
+                span
+                    font-family: $muksb
+                    line-height: 1
+                    color: #525252
+                    text-transform: uppercase
+                    transition: color .2s ease
+                &:hover
+                    background-color: #fafafa
+                &.selected
+                    background-color: #fafafa
+                    opacity: .6
+                    cursor: default
+    .token-list
+        border-top: 1px solid #f1f1f1
+        flex-grow: 1
+        overflow-y: auto
+        padding: 10px 20px 0
+        margin: 0 -40px
+        @media (max-width: 499px)
+            padding: 10px 0 0
+            margin: 0 -20px
+        &__item
+            display: flex
+            align-items: center
+            border-radius: 8px
+            padding: 12px 20px
+            position: relative
+            @media (max-width: 499px)
+                border-radius: 0
+            button
+                position: absolute
+                right: 10px
+                top: 50%
+                transform: translateY(-50%)
+                padding: 5px 20px
+            img
+                width: 36px
+                height: 36px
+                flex-shrink: 0
+                margin-right: 16px
+            &:hover
+                background-color: #f8f8f8
+            &-name
+                .ticker
+                    font-family: $muksb
+                    color: #525252
+                    text-transform: uppercase
+                    margin-bottom: 2px
+                    transition: color .2s ease
+                .descr
+                    font-family: $muk
+                    color: #b1b1b1
+                    text-transform: none
+                    margin: 0
+
+    .wallet-list
+        border-top: 1px solid #f1f1f1
+        border-bottom: 1px solid #f1f1f1
+        flex-grow: 1
+        overflow-y: auto
+        padding: 40px 70px
+        margin: 0 -40px
+        @media (max-width: 499px)
+            padding: 20px
+            margin: 0 -20px
+        &__item
+            display: flex
+            align-items: center
+            background-color: #fff
+            box-shadow: 0px 0px 4px rgba(0,0,0, .07)
+            border: 1px solid #EFEFEF
+            border-radius: 8px
+            padding: 10px 25px
+            margin-bottom: 18px
+            &:last-child
+                margin-bottom: 0
+            img
+                width: 40px
+                height: 40px
+                flex-shrink: 0
+                margin-right: 15px
+            span
+                font-family: $muksb
+                font-size: 17px
+                color: #3e3e3e
+                transition: color .2s ease
+            &:hover
+                background-color: #FFFBFA
+                border-color: #FFDED1
+                box-shadow: 0px 0px 10px #FFF7F4
+
+    &__about-wallets
+        font-family: $mukm
+        text-align: center
+        padding-top: 24px
+        a
+            display: inline-block
+            color: $orange
+            margin-left: 10px
+    &__initializing
+        display: flex
+        justify-content: center
+        align-items: center
+        border-top: 1px solid #f1f1f1
+        padding: 60px 0
+        transition: all .2s ease
+        .initializing
+            display: flex
+            align-items: center
+            img
+                animation: spin 1.5s linear infinite
+            span
+                display: inline-block
+                font-family: $muksb
+                font-size: 18px
+                color: $orange
+                margin-left: 10px
+    &__body
+        &-token
+            background-color: #fff
+            box-shadow: 0px 0px 20px rgba(0,0,0, .05)
+            border: 1px solid #efefef
+            border-radius: 8px
+            height: 60px
+            padding: 6px 16px
+            transition: all .2s ease
+            display: flex
+            justify-content: space-between
+            align-items: center
+            &-left
+                display: flex
+                justify-content: flex-start
+                align-items: center
+                img
+                    width: 28px
+                    height: 28px
+                span
+                    font-size: 18px
+                    margin-left: 5px
+            &-right
+        &-content
+            &-title
+                font-weight: 600
+            &-reward
+                display: flex
+                align-items: center
+                justify-content: flex-start
+                margin: 16px 0
+                font-weight: 600
+                font-size: 36px
+                &-amount
+                    margin-right: 10px
+                img
+                    width: 24px
+                    height: 24px
+                    margin-right: 3px
+        &-desc
+            white-space: break-spaces
+            margin: 30px 0
+            color: #9a9a9a
+        &-details
+            margin-bottom: 30px
+            &-item
+                display: flex
+                justify-content: space-between
+                align-items: center
+                margin: 10px 0
+
+                &-name
+                    color: #9a9a9a
+                    font-size: 16px
+                &-value
+                    font-size: 16px
+                    font-weight: bold
+                    &-rates
+                        margin-bottom: 5px
+                &-value.token0,
+                &-value.token1
+                    display: flex
+                    align-items: center
+                    justify-content: flex-end
+                    img
+                        width: 24px
+                        height: 24px
+                        margin-right: 10px
+                    span
+                        font-size: 18px
+            &-item.rates
+                align-items: flex-start
+                text-align: right
+
+        &-btn
+            width: 100%
+            &:disabled
+                cursor: not-allowed
+                background-color: #f5f5f5 !important
+                border-color: #d9d9d9 !important
+                color: rgba(0, 0, 0, .25) !important
+                box-shadow: none !important
+    .available-balance
+        display: flex
+        justify-content: space-between
+        flex-direction: row
+        align-items: center
+        font-size: 16px
+        margin-bottom: 16px
+        &-title
+            font-weight: 600
+            color: #9a9a9a
+        &-value
+            font-size: 20px
+    &__pending
+        padding-top: 25px
+        &-spinner
+            display: flex;
+            justify-content: center
+            align-items: center
+            padding: 50px 0
+            img
+                animation: spin 1.5s linear infinite
+                width: 90px
+                height: 90px
+        &-details
+            &-title
+                font-size: 20px
+                font-weight: 500
+                text-align: center
+            &-info
+                font-size: 14px
+                font-weight: 500
+                text-align: center
+                margin-top: 12px
+            &-note
+                font-size: 12px
+                text-align: center
+                color: rgb(86, 90, 105)
+                margin-top: 12px
+    &__transaction
+        display: flex
+        flex-direction: column
+        align-items: center
+        &-img
+            width: 90px
+            height: 90px
+            margin-top: 75px
+        &-title
+            font-size: 20px
+            font-weight: 500
+            text-align: center
+            margin-top: 25px
+            color: #FF6616
+        &-link
+            font-size: 16px
+            font-weight: 500
+            text-align: center
+            margin-top: 15px
+            color: #FF6616
+        &-btn
+            width: 100%
+            margin-top: 30px
+    &__remove
+        &-token
+            display: flex
+            align-items: center
+            justify-content: space-between
+            padding: 5px 0
+            &-value
+                font-size: 20px
+                font-weight: bold
+            &-label
+                display: flex
+                align-items: center
+                img
+                span
+                    margin-left: 5px
+                    font-weight: bold
+        &-plus
+            font-size: 20px
+            margin: 5px 0
+        &-note
+            white-space: break-spaces;
+            margin: 30px 0;
+            color: #9a9a9a;
+        &-burn
+            display: flex
+            align-items: center
+            justify-content: space-between
+            &-label
+            &-value
+                display: flex
+                align-items: center
+                justify-content: space-between
+                img
+                    width: 16px
+                    height: 16px
+                span
+                    margin-left: 10px
+        &-price
+            margin: 30px 0
+            display: flex
+            justify-content: space-between
+            align-items: flex-start
+            &-values
+                display: flex
+                flex-direction: column
+                align-items: flex-end

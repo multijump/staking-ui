@@ -1,0 +1,387 @@
+.hero
+    padding: 120px 0 60px
+    @media (max-width: 767px)
+        padding: 80px 0 40px
+    &__text
+        max-width: 680px
+        text-align: center
+        margin: 0 auto 135px
+        @media (max-width: 767px)
+            margin-bottom: 80px
+        h1
+            margin-bottom: 50px
+            transition: color .2s ease
+            @include fluidFontSize(42px, 88px, 360px, 1300px, 88px)
+        p
+            font-size: 22px
+            line-height: 1.65
+            color: $gray
+            transition: color .2s ease
+            @include fluidFontSize(16px, 22px, 360px, 1300px, 22px)
+
+    .indicators
+        display: flex
+        justify-content: space-between
+        width: 100%
+        max-width: 1060px
+        margin: 0 auto
+        @media (max-width: 1023px)
+            flex-wrap: wrap
+            max-width: 460px
+        &__item
+            width: calc(25% - 65px)
+            border-top: 1px solid #ebebeb
+            padding: 30px 0
+            font-family: $mukm
+            font-size: 15px
+            transition: border .2s ease
+            @media (max-width: 1023px)
+                width: calc(50% - 30px)
+                text-align: center
+            @media (max-width: 499px)
+                width: 100%
+            span
+                display: block
+                font-family: $ttnm
+                font-size: 38px
+                color: $orange
+                margin-top: 8px
+                @media (max-width: 767px)
+                    font-size: 32px
+
+
+
+
+
+.system-descr
+    padding: 120px 0
+    @media (max-width: 767px)
+        padding: 60px 0
+    &__row
+        display: flex
+        align-items: center
+        width: 100%
+        max-width: 1130px
+        margin: 0 auto 185px
+        @media (max-width: 1023px)
+            flex-direction: column
+            margin-bottom: 120px
+            &--reverse
+                flex-direction: column-reverse
+        @media (max-width: 767px)
+            margin-bottom: 60px
+        &:last-child
+            margin-bottom: 0
+        &>*
+            margin-right: 95px
+            @media (max-width: 1023px)
+                margin-right: 0
+            &:last-child
+                margin-right: 0
+    &__text
+        @media (max-width: 1023px)
+            margin-bottom: 60px
+        .title
+            color: #b7b7b7
+            margin-bottom: 25px
+            transition: color .2s ease
+            @include fluidFontSize(16px, 20px, 360px, 768px, 20px)
+        h4
+            line-height: 1.4
+            margin-bottom: 30px
+            transition: color .2s ease
+        p
+            font-family: $mukl
+            line-height: 1.65
+            color: #5c5c5c
+            max-width: 430px
+            transition: color .2s ease
+            @media (max-width: 1023px)
+                max-width: 100%
+    &__img
+        flex-shrink: 0
+        @media (max-width: 1169px) and (min-width: 1024px)
+            &--01
+                max-width: 51.4vw
+            &--02
+                max-width: 46.6vw
+
+
+
+
+
+
+
+.community
+    padding: 120px 0 200px
+    @media (max-width: 767px)
+        padding: 60px 0
+    &__title
+        text-align: center
+        max-width: 720px
+        margin: 0 auto 85px
+        @media (max-width: 767px)
+            margin-bottom: 60px
+        h2
+            margin-bottom: 20px
+            transition: color .2s ease
+        p
+            line-height: 1.4
+            color: $gray
+            transition: color .2s ease
+            @include fluidFontSize(16px, 24px, 360px, 768px, 24px)
+    &__items
+        display: flex
+        justify-content: space-between
+        max-width: 1220px
+        margin: 0 auto
+        @media (max-width: 1023px)
+            justify-content: center
+            flex-wrap: wrap
+            max-width: 460px
+        @media (max-width: 449px)
+            max-width: 220px
+    &__item
+        position: relative
+        display: flex
+        justify-content: center
+        align-items: center
+        width: calc(20% - 26px)
+        border: 1px solid #f1f1f1
+        border-radius: 12px
+        padding-bottom: 15.5%
+        transition: all .2s ease
+        &:hover
+            border-color: #FF6C3E
+            transform: translateY(-10px)
+        @media (max-width: 1023px)
+            width: calc(50% - 15px)
+            padding-bottom: 40%
+            margin-right: 30px
+            margin-bottom: 30px
+            &:nth-child(even)
+                margin-right: 0
+            &:last-child
+                margin: 0
+        @media (max-width: 449px)
+            width: 100%
+            padding-bottom: 87%
+            margin: 0 0 30px
+            &:last-child
+                margin: 0
+        &-inner
+            max-width: 100%
+            position: absolute
+            top: 50%
+            left: 50%
+            transform: translate(-50%, -50%)
+        .icon-wrap
+            display: flex
+            justify-content: center
+            align-items: center
+            width: 72px
+            height: 72px
+            border-radius: 100%
+            margin-bottom: 20px
+            transition: all .2s ease
+            &--twitter
+                background-color: #33CCFF
+                box-shadow: 0px 4px 10px #BAEBFF
+            &--discourse
+                background-color: #303030
+                bbox-shadow: 0px 4px 10px rgba(74,74,74, .4)
+            &--telegram
+                background-color: #29ABE1
+                box-shadow: 0px 4px 10px #8FDEFF
+            &--discord
+                background-color: #8C9EFF
+                box-shadow: 0px 4px 10px rgba(140,158,255, .4)
+            &--facebook
+                background-color: #357CE3
+                box-shadow: 0px 4px 10px #BAEBFF
+        p
+            font-family: $muksb
+            font-size: 18px
+            color: #2b2b2b
+            text-align: center
+
+.farm-pools
+    padding: 120px 0
+    @media (max-width: 767px)
+        padding: 60px 0
+    .community__title
+        max-width: 670px
+        margin: 0 auto
+    .chain
+        width: 100%
+        text-align: center
+        cursor: pointer
+    .pools
+        width: 100%
+        max-width: 800px
+        margin: 0 auto 48px
+        .pool
+            width: 100%
+            display: flex
+            flex-direction: row
+            background-color: #fff
+            border: 1px solid #e7e7e7
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.08)
+            border-radius: 13px
+            margin-bottom: 28px
+            padding: 20px 30px
+            font-family: Mukta-regular
+            @media (max-width: 767px)
+                flex-wrap: wrap
+            .pool-icon
+                position: relative
+                width: 80px
+                height: 45px
+                order: 1
+                @media (max-width: 767px)
+                    height: 58px
+                    border-bottom: 1px solid #e6e6e6
+                .first-icon
+                    position: absolute
+                    width: 45px
+                    height: 45px
+                    top: 0
+                    left: 0
+                    z-index: 2
+                    border: 4px solid #fff
+                    transition: border .2s ease
+                    border-radius: 100%
+                    overflow: hidden
+                    img
+                        width: 100%
+                        height: auto
+                .second-icon
+                    position: absolute
+                    width: 45px
+                    height: 45px
+                    top: 0
+                    right: 0
+                    border-radius: 100%
+                    border: 4px solid transparent
+                    overflow: hidden
+                    img
+                        width: 100%
+                        height: auto
+            .pool-name
+                display: flex
+                flex-direction: column
+                flex-grow: 1
+                flex-basis: 0
+                text-align: left
+                padding: 0 20px
+                border-right: 1px solid #e6e6e6
+                order: 2
+                @media (max-width: 767px)
+                    border-right: 0px
+                    padding-left: 0
+                    padding-top: 10px
+                    order: 3
+                &--symbol
+                    font-style: normal
+                    font-weight: 600
+                    font-size: 22px
+                &--fullname
+                    font-style: normal
+                    font-weight: normal
+                    font-size: 18px
+                    color: #c1c1c1
+            .pool-liquidity
+                display: flex
+                flex-direction: column
+                width: 217px
+                text-align: right
+                padding: 0 30px
+                border-right: 1px solid #e6e6e6
+                order: 3
+                @media (max-width: 767px)
+                    width: calc(100% - 80px)
+                    padding-right: 0
+                    padding-bottom: 10px
+                    border-right: 0px
+                    border-bottom: 1px solid #e6e6e6
+                    order: 2
+                &--usd
+                    font-style: normal
+                    font-weight: 500
+                    font-size: 22px
+                &--descr
+                    font-style: normal
+                    font-weight: normal
+                    font-size: 18px
+                    color: #c1c1c1
+            .pool-apy
+                display: flex
+                flex-direction: column
+                width: 130px
+                text-align: right
+                order: 4
+                @media (max-width: 767px)
+                    padding-top: 10px
+                &--value
+                    font-style: normal
+                    font-weight: 500
+                    font-size: 22px
+                    color: #23aa59
+                &--descr
+                    font-style: normal
+                    font-weight: normal
+                    font-size: 18px
+                    color: #c1c1c1
+    .system-descr__text
+        .chain-selector
+            display: flex
+            flex-direction: row
+            justify-content: center
+            align-items: center
+            margin: 45px 0
+            .chain-name
+                font-family: Mukta-regular
+                font-style: normal
+                font-weight: 600
+                font-size: 20px
+                color: #bdbdbd
+                margin: 10px
+                &.selected
+                    color: #3b3b3b
+            .selector
+                display: flex
+                align-items: center
+                width: 70px
+                height: 39px
+                background-color: #f1f1f1
+                border-radius: 39px
+                padding: 2px
+                &-handler
+                    display: flex
+                    justify-content: center
+                    align-items: center
+                    width: 35px
+                    height: 35px
+                    background-color: #fff
+                    border-radius: 35px
+                    img
+                        width: 27px
+                        height: 27px
+                &.bsc-chooser
+                    justify-content: flex-end
+                &.eth-chooser
+                    justify-content: flex-start
+    button.view-more
+        width: 186px
+        border: 1px solid #e7e7e7
+        border-radius: 10px
+        font-family: Mukta-regular
+        font-style: normal
+        font-weight: 500
+        font-size: 16px
+        line-height: 27px
+        padding: 13.5px
+        color: #646464
+        background-color: transparent
+        cursor: pointer
+        margin: auto

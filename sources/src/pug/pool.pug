@@ -1,0 +1,34 @@
+extends base/_layout
+block head
+    title Swipe Swap Pool
+block headerClass
+    - var activeItem = 'pool'
+block page
+    .sec-header
+        .container
+            .swap-toggle
+                label.swap-toggle__btn
+                    input(type="radio" name="swap-toggle")
+                    span.swap-toggle__btn-label Ethereum
+                label.swap-toggle__btn
+                    input(type="radio" name="swap-toggle")
+                    span.swap-toggle__btn-label Binance
+            .sec-header__title Liquidity provider rewards
+            p Liquidity providers earn a 0.3% fee on all trades proportional to their share of the pool. Fees are added to the pool, accrue in real time and can be claimed by withdrawing your liquidity.
+    .pool
+        .container
+            .pool__title
+                h5 Your liquidity
+                .btns
+                    a(href="add-liquidity.html?type=create").btn.btn-outline Create a Pair
+                    a(href="add-liquidity.html?type=add").btn Add Liquidity
+            .pool__descr Connect a wallet to view your liquidity.
+            .pool__about Last pool fetched&nbsp;
+                b.seconds 0
+                span &nbsp;seconds ago.
+                a.refresh-now(data-event-click="initPool") Refresh now
+
+
+block footer
+        block scripts
+            script(src="js/pool.js")

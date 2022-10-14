@@ -1,0 +1,310 @@
+.dark-mode
+    background-color: $dark
+
+    input[type=text], input[type=search], input[type=email], input[type=password], textarea
+        background-color: $bgdark
+        box-shadow: 0px 8px 6px rgba(0,0,0, .01)
+        border-color: $bdark
+        color: #fff
+
+    .main
+        &--home
+            background: url('../images/main-bg-1_dm.png') center 0 no-repeat, url('../images/main-bg-2_dm.png') center 1500px no-repeat
+            background-size: 100% auto
+        &--biege
+            background-color: $dark2
+
+    .dark-mode-toggle
+        background-color: $bgdark
+        &__inner
+            &::before
+                background-color: #fff
+
+    .sec-header
+        background-color: $dark2
+        &__title
+            background-color: $dark
+            border-color: $bdark
+        p
+            color: #b9b9b9
+
+
+
+    .header
+        &.is-fixed
+            background-color: $dark
+        &__logo
+            &-text
+                border-color: $bdark
+        &__menu
+            @media (max-width: 1023px)
+                background-color: $dark
+            &-main
+                .header__menu-submenu
+                    ul
+                        background-color: #272727
+                        border-color: #232323
+                        @media (max-width: 1023px)
+                            background-color: $dark
+        &__nav
+            a
+                color: #fff
+                &.active
+                    color: $orange2
+                &:hover
+                    color: $orange2
+        &--inner
+            background-color: $dark
+
+
+
+
+    .footer
+        background-color: $dark
+        border-color: $bdark
+        &__col-head
+            p
+                color: #d8d8d8
+        &__form
+            h6
+                color: #d8d8d8
+        &__copyright
+            border-color: $bdark
+            color: #494949
+
+
+
+
+    .hero
+        &__text
+            h1, p
+                color: $light
+        .indicators
+            &__item
+                border-color: #2f2f2f
+                color: #797979
+
+    .system-descr__text
+        .title
+            color: #7e7e7e
+        h4, p
+            color: $light
+
+    .community
+        &__title
+            h2, p
+                color: $light
+        &__item
+            background-color: #000
+            border-color: #000
+            .icon-wrap
+                box-shadow: 0px 4px 10px rgba(74,74,74, .4) !important
+            &:hover
+                background-color: #0C0C0C
+                border-color: #0C0C0C
+
+
+
+
+    .token
+        &__title
+            h1
+                color: $light
+        &-about
+            background-color: $dark
+            border-color: $bdark
+            h5
+                color: #fff
+            .addresses
+                border-color: $bdark
+                &__item
+                    .address
+                        color: #fff
+        &-features
+            h4
+                color: $light
+            .features-item
+                background-color: $dark2
+                border-color: $bdark
+                &:hover
+                    border-color: rgba(239,127,65, .2)
+                h6
+                    color: #fff
+
+    .our-markets
+        h4
+            color: $light
+
+    .swap
+        &-toggle
+            background-color: $dark
+            border-color: $bdark
+            &__btn-label
+                color: #fff
+        &-form
+            background-color: $dark
+            border-color: $bdark
+            &__back
+                svg
+                    path
+                        stroke: #fff
+            &__title
+                h6
+                    color: #fff
+            &__notice
+                background-color: $bgdark
+                border-color: $bdark
+            &__input
+                background-color: $bgdark
+                border-color: $bdark
+                &-title
+                    color: #fff
+                .select-token
+                    &.selected
+                        background-color: $bgdark
+                        color: #fff
+                        &::after
+                            background-image: url("data:image/svg+xml,%3Csvg width='8' height='4' viewBox='0 0 8 4' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0.145639 0.207961C0.361988 -0.0428071 0.74066 -0.0707093 0.991428 0.145639L3.99434 2.73638L6.99725 0.145639C7.24802 -0.070709 7.62669 -0.0428071 7.84304 0.20796C8.05939 0.458728 8.03148 0.837401 7.78072 1.05375L4.64695 3.75739C4.27201 4.08087 3.71667 4.08087 3.34172 3.75739L0.207961 1.05375C-0.0428071 0.837401 -0.0707093 0.458728 0.145639 0.207961ZM3.8639 3.15214C3.93884 3.21679 4.04984 3.21679 4.12478 3.15214L7.25854 0.448501C7.34204 0.376461 7.46813 0.385752 7.54017 0.469253C7.61222 0.552755 7.60292 0.678847 7.51942 0.750887L4.38566 3.45452C4.16083 3.64849 3.82784 3.64849 3.60301 3.45452L0.469253 0.750887C0.385752 0.678847 0.376461 0.552755 0.448501 0.469253C0.520542 0.385752 0.646634 0.376461 0.730135 0.448501L3.8639 3.15214Z' fill='white'/%3E%3Cpath d='M3.8639 3.15214C3.93884 3.21679 4.04984 3.21679 4.12478 3.15214L7.25854 0.448501C7.34204 0.376461 7.46813 0.385752 7.54017 0.469253C7.61222 0.552755 7.60292 0.678847 7.51942 0.750887L4.38566 3.45452C4.16083 3.64849 3.82784 3.64849 3.60301 3.45452L0.469253 0.750887C0.385752 0.678847 0.376461 0.552755 0.448501 0.469253C0.520542 0.385752 0.646634 0.376461 0.730135 0.448501L3.8639 3.15214Z' fill='white'/%3E%3C/svg%3E")
+                &-divider
+                    .input-divider
+                        svg
+                            path
+                                stroke: #fff
+            &__price
+                p
+                    color: #fff
+                &-title
+                    color: #fff
+                &-row
+                    border-color: $bdark
+                &-col
+                    .value
+                        color: #fff
+                    .descr
+                        color: $light
+
+
+
+
+
+    .popup
+        background-color: $dark
+        border-color: $bdark
+        &__close
+            &::before, &::after
+                background-color: #fff
+        &__title
+            h6
+                color: #fff
+        &__back
+            svg
+                path
+                    stroke: #fff
+        .common-bases
+            &__title
+                color: #fff
+            .cb-item
+                border-color: $bdark
+                span
+                    color: #fff
+                &:hover
+                    background-color: $bgdark
+                &.selected
+                    background-color: $bgdark
+        .token-list
+            &__item
+                &:hover
+                    background-color: $bgdark
+                &-name
+                    .ticker
+                        color: #fff
+        .wallet-list
+            border-color: $bdark
+            &__item
+                background-color: $bgdark
+                border-color: $bdark
+                span
+                    color: #fff
+        &__initializing
+            border-color: $bdark
+
+
+
+
+    .pool
+        background-color: $dark
+        &__title
+            border-color: $bdark
+            h5
+                color: #fff
+        &__descr
+            .pool-accordion 
+                color: #fff
+        &__about
+            color: #fff
+
+
+
+
+    .farm
+        &-table
+            background-color: $bgdark
+            border-color: $bdark
+            thead
+                border-color: $dark2
+                th
+                    color: #fff
+            tbody
+                tr
+                    border-color: $dark2
+                td
+                    color: #fff
+                    .cell-title
+                        color: #fff
+                    .cell-farms
+                        &__icons
+                            .second-icon
+                                border-color: $bgdark
+                        &__text
+                            .descr
+                                color: #fff
+
+
+
+
+    .proposals
+        background-color: $dark
+        &__title
+            color: #fff
+        &__item
+            background-color: $bgdark
+            border-color: $bdark
+            .num, .name
+                color: #fff
+
+    .proposal
+        background-color: $dark
+        border-color: $bdark
+        &__header
+            border-color: $bdark
+        &__back
+            svg
+                path
+                    stroke: #fff
+            h6
+                color: #fff
+        &__body
+            color: #fff
+        .progress-item
+            border-color: $bdark
+
+    img[title]
+        filter: invert(1)
+    .swap-form span
+        color: white
+    .swap-form input
+        color: white
+        background-color: #272727
+    .swap-form__settings-slippage-values-item:not(.active)
+        background: #272727
+        color: white

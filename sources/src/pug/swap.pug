@@ -1,0 +1,88 @@
+extends base/_layout
+block head
+    title Swipe Swap
+block headerClass
+    - var activeItem = 'swap'
+block mainClass
+    - var mainClass = 'main--flex main--biege'
+block page
+    .swap
+        .container
+            .swap-toggle
+                label.swap-toggle__btn
+                    input(type="radio" name="swap-toggle")
+                    span.swap-toggle__btn-label Ethereum
+                label.swap-toggle__btn
+                    input(type="radio" name="swap-toggle")
+                    span.swap-toggle__btn-label Binance
+            form(action="#" data-submit="disabled").swap-form
+                .swap-form__settings
+                    .swap-form__settings-slippage
+                        .swap-form__settings-slippage-title
+                            span Slippage tolerance
+                            img(src="images/tip.svg", alt="", width="16", height="16", title="Your transaction will revert if the price changes unfavorably by more than this percentage.")
+                        .swap-form__settings-slippage-values
+                            .swap-form__settings-slippage-values-item 0.1%
+                            .swap-form__settings-slippage-values-item.active 0.5%
+                            .swap-form__settings-slippage-values-item 1%
+                    .swap-form__settings-deadline
+                        .swap-form__settings-deadline-title
+                            span Transaction deadline
+                            img(src="images/tip.svg", alt="", width="16", height="16", title="Your transaction will revert if it is pending for more than this long.")
+                        .swap-form__settings-deadline-values
+                            input#swap-deadline(type="number" placeholder="20" min="0" data-event-input="onInputDeadline")
+                            span minutes
+                .swap-form__inputs
+                    .swap-form__input
+                        .swap-form__input-header
+                            .swap-form__input-header-title From
+                            .swap-form__input-header-balance#balance-from(data-event-click="onBalance:from") Balance
+                                span -
+                        .swap-form__input-row(data-input="from")
+                            input#swap-from-token(type="text" placeholder="0.00" min="0" data-event-input="onInputAmount:from")
+                            a.base-token(href="#select_token" data-key="0x0000000000000000000000000000000000000000").select-token.selected.js-popup-open
+                                img#swap_from_img(src="images/eth.svg", alt="")
+                                span.ticker ETH
+                    .swap-form__input-divider
+                        .input-divider.js-input-swap
+                            svg(width='13' height='15' fill='none' version='1.1' viewBox='0 0 13 15' xmlns='http://www.w3.org/2000/svg')
+                                path(d='m6.8333 0v14m-0.27528 0.089886 5.8334-4.6667m-5.2098 4.6723-5.8333-4.6667')
+                    .swap-form__input
+                        .swap-form__input-header
+                            .swap-form__input-header-title To
+                            .swap-form__input-header-balance#balance-to(data-event-click="onBalance:to") Balance
+                                span -
+                        .swap-form__input-row(data-input="to")
+                            input#swap-to-token(type="text" placeholder="0.00" min="0" data-event-input="onInputAmount:to")
+                            a(href="#select_token").select-token.js-popup-open
+                                img#swap_to_img(src="#", alt="")
+                                span.ticker Select a Token
+                .swap-form__price
+                .swap-btn
+            .swap-footer(style="display: none")
+                .swap-footer-row
+                    .swap-footer-row-label
+                        span Minimum Received
+                        img(src="images/tip.svg", alt="", width="16", height="16", title="Your transaction will revert if there is a large, unfavorable price movement before it is confirmed.")
+                    .swap-footer-row-value#swap-min-received - 
+                .swap-footer-row
+                    .swap-footer-row-label
+                        span Price Impact
+                        img(src="images/tip.svg", alt="", width="16", height="16", title="The difference between the market price and estimated price due to trade size.")
+                    .swap-footer-row-value.green#swap-price-impact -
+                .swap-footer-row
+                    .swap-footer-row-label
+                        span Liquidity Provider Fee
+                        img(src="images/tip.svg", alt="", width="16", height="16", title="A portion of each trade (0.30%) goes to liquidity providers as a protocol incentive.")
+                    .swap-footer-row-value#swap-lp-fee -
+                .swap-footer-row#swap-footer-route
+                    .swap-footer-row-label
+                        span Route
+                        img(src="images/tip.svg", alt="", width="16", height="16", title="Routing through these tokens resulted in the best price for your trade.")
+                    .swap-footer-row-value#swap-best-route -
+
+block footer
+    include blocks/_footer-inner
+
+block scripts 
+    script(src="js/swap/index.js")

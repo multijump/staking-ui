@@ -1,0 +1,44 @@
+extends base/_layout
+block head
+    title Remove liquidity
+block mainClass
+    - var mainClass = 'main--flex main--biege'
+block page
+    .remove
+        .container
+            form(action="#").remove-form
+                a(href="pool.html").remove-form__back
+                    svg(width='17' height='18' fill='none' version='1.1' viewBox='0 0 17 18' xmlns='http://www.w3.org/2000/svg')
+                        path(d='m17 8.8125h-15m-0.34375-0.53125 6.25 7.8125m-6.3125-6.6562 6.2812-8.125' stroke='#333' stroke-width='2')
+                .remove-form__title
+                    h6 Remove liquidity
+                .remove-form__notice
+                    h6 Tip:
+                    p Removing pool tokens converts your position back into underlying tokens at the current rate, proportional to your share of the pool. Accrued fees are included in the amounts you receive.
+                .remove-form__amount
+                    .remove-form__amount-title Amount 
+                    .remove-form__amount-percent 0%
+                    input.remove-form__amount-range(type="range" value="0" min="0" max="100" step="1" data-event-click="onPercentChange")
+                .remove-form__buttons
+                    .remove-form__buttons-item(data-event-click="onPercentChange:25") 25%
+                    .remove-form__buttons-item(data-event-click="onPercentChange:50") 50%
+                    .remove-form__buttons-item(data-event-click="onPercentChange:75") 75%
+                    .remove-form__buttons-item(data-event-click="onPercentChange:100") Max
+                .remove-form__info
+                    .remove-form__info-token
+                        .remove-form__info-token-value.remove-token0-amount -
+                        .remove-form__info-token-label
+                            img#remove-form__from-token-img(width="24" height="24" alt="token0")
+                            span#remove-form__from-token-symbol
+                    .remove-form__info-token
+                        .remove-form__info-token-value.remove-token1-amount -
+                        .remove-form__info-token-label
+                            img#remove-form__to-token-img(width="24" height="24" alt="token1")
+                            span#remove-form__to-token-symbol
+                .remove-form__price
+                .remove-form__action
+                    .remove-form__action-btn.btn.btn-big.btn-disabled Enter Amount
+
+block footer
+block scripts
+    script(src="js/remove-liquidity.js")
